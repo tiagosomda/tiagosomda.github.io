@@ -148,6 +148,7 @@ header .intro-text .skills {
   color: white;
   border-color: #000000;
 }
+
 @media (min-width: 768px) {
   .navbar-custom {
     padding: 25px 0;
@@ -160,6 +161,9 @@ header .intro-text .skills {
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
+    .highlight {
+
+    }
   }
   .navbar-custom.affix {
     padding: 10px 0;
@@ -508,4 +512,10 @@ fieldset[disabled] .btn-success.active {
 }
 div#maincontent {
   outline: none;
+}
+
+@media (min-width: 168px) {
+  .highlight {
+    display:none;
+  }
 }

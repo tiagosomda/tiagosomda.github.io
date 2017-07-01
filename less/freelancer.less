@@ -133,6 +133,10 @@ header {
 		&:hover .highlight{
 			color:white;
 		}
+		// NOT HERE
+		//.highlight {
+		//	color:blue;
+		//}
 	}
 	.navbar-nav {
 		letter-spacing: 1px;
@@ -186,12 +190,19 @@ header {
 	        -webkit-transition: all 0.3s;
 	        -moz-transition: all 0.3s;
 	        transition: all 0.3s;
+			//NOT HERE
+			//.highlight {
+			//	color:blue;
+			//}
 	    }
     }
     .navbar-custom.affix {
         padding: 10px 0;
 		.navbar-brand {
 	        font-size: 1.5em;
+			.highlight{
+				display:none;
+			}
 	    }
 	}
 }
@@ -215,7 +226,11 @@ section.success {
 	}
 	section.first {
 		padding-top: 75px;
-	}
+	} 	
+}
+
+@media(max-width:1000px) {
+    .collapse-title { display: none; }  
 }
 
 #portfolio {
