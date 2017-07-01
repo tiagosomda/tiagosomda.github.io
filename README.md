@@ -1,33 +1,27 @@
-# react-drive-cms
-Publish articles directly from Google Drive to your blog with React JS.
+# [Start Bootstrap](http://startbootstrap.com/) - [Freelancer](http://startbootstrap.com/template-overviews/freelancer/)
 
-Live demo here: 
-http://misterfresh.github.io/react-drive-cms/
+[Freelancer](http://startbootstrap.com/template-overviews/freelancer/) is a one page freelancer portfolio theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). This theme features several content sections, a responsive portfolio grid with hover effects, full page portfolio item modals, and a working PHP contact form.
 
-Features:
-- A dynamic site, but no backend to manage, no database, no server, no hosting!
-- Send emails from the client securely
-- A MS Word-like and MS Excel-like interface that users are familiar with
-- Disqus comments system integration
+## Getting Started
 
-Drawbacks:
-- Hashbang Urls
-- More dependent on third-party services
+To begin using this template, choose one of the following options to get started:
+* [Download the latest release on Start Bootstrap](http://startbootstrap.com/template-overviews/freelancer/)
+* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-freelancer.git`
+* Fork the repo
 
-How to use:
+## Bugs and Issues
 
-1) In your Google Drive, create folders and files following the names and structure used here : 
-https://docs.google.com/folderview?id=0B0A_zASTMp9WU0NMYW9wXzVQWjg&usp=drivesdk
+Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-freelancer/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/freelancer/).
 
-2) Add to the Dashboard sheet the following bound script:
-https://gist.github.com/misterfresh/e1c9cf0bb4c777221f84
-This will create a new "Update" button with which you can automatically update the Dashboard file. 
+## Creator
 
-3) In order for the contact form to work, publish the following script as a Google Web App:
-https://gist.github.com/misterfresh/b69d29a97cf415980be2
+Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
 
-4) Fill in the correct values in assets/js/config.js
+* https://twitter.com/davidmillerskt
+* https://github.com/davidtmiller
 
-5) Put the contents of the assets folder on GitHub Pages
+Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
 
-That's it!
+## Copyright and License
+
+Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-freelancer/blob/gh-pages/LICENSE) license.
