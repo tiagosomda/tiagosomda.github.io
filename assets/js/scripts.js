@@ -207,7 +207,7 @@ jQuery(function ($) {
 
 
 
-    (function () {
+/*     (function () {
         $('.popup-video').magnificPopup({
             disableOn: 700,
             type: 'iframe',
@@ -216,10 +216,7 @@ jQuery(function ($) {
             preloader: false,
             fixedContentPos: false
         });
-    }());
-
-
-
+    }()); */
 
 
     // -------------------------------------------------------------
@@ -229,14 +226,13 @@ jQuery(function ($) {
         $(".video-container").fitVids();
     }());
 
-
-
     // -------------------------------------------------------------
     // Vidio auto play
     // -------------------------------------------------------------
+    /*   
     (function () {
     
-    /* Vimeo API: http://developer.vimeo.com/player/js-api */
+    /* Vimeo API: http://developer.vimeo.com/player/js-api *\/
     
         var iframe = document.getElementById('nofocusvideo');
         // $f == Froogaloop
@@ -250,6 +246,7 @@ jQuery(function ($) {
         player.api('play');
         })
     }());
+    */
 
 
 
@@ -292,7 +289,7 @@ jQuery(function ($) {
     // Contact Form
     // -------------------------------------------------------------
 
-    $('#contactForm').on('submit',function(e){
+/*     $('#contactForm').on('submit',function(e){
 
         e.preventDefault();
 
@@ -318,7 +315,7 @@ jQuery(function ($) {
         }, "json");
 
     });
-
+ */
 
 
 
@@ -326,7 +323,7 @@ jQuery(function ($) {
     // Google Map
     // -------------------------------------------------------------
 
-    (function () {
+/*     (function () {
         var myLatlng = new google.maps.LatLng(41.372641, -74.687387);
 
             var styles = [
@@ -390,7 +387,7 @@ jQuery(function ($) {
             });
 
     }());
-
+ */
 
 });
 

@@ -105,11 +105,12 @@
 
 
     <!-- About Section -->
-    <section id="about" class="about-section section-padding-small">
+    <section id="about" class="about-section section-padding">
       <div class="container">
-        <!-- <h2 class="section-title wow fadeInUp">About Me</h2> -->
+        <h2 class="section-title wow fadeInUp">About Me</h2>
 
         <div class="row">
+
           <div class="col-md-4 col-md-push-8">
             <div class="biography">
               <div class="myphoto">
@@ -128,28 +129,31 @@
 
           <div class="col-md-8 col-md-pull-4">
             <div class="short-info wow fadeInUp">
-              <h3>Hello!</h3>
-              <p>I am a Computer Science graduate from North Carolina State University. <br> I am really interested in how computer technology can change the world in good ways. <br> Thus, I am always reading, learning, creating prototypes of cool innovative technologies.</p>
+              <h3>Objective</h3>
+              <p>An opportunity to work and upgrade oneself, as well as being involved in an organization that believes in gaining a competitive edge and giving back to the community. I'm presently expanding my solid experience in UI / UX design. I focus on using my interpersonal skills to build good user experience and create a strong interest in my employers. I hope to develop skills in motion design and my knowledge of the Web, and become an honest asset to the business. As an individual, I'm self-confident you’ll find me creative, funny and naturally passionate. I’m a forward thinker, which others may find inspiring when working as a team.</p>
             </div>
 
             <div class="short-info wow fadeInUp">
-              <h3>Which innovative technologies?</h3>
-              <p>Right now I have three areas that I am passionate about. <br>
-                  <strong>xR</strong> - Virtual and Augmented Reality.<br>
-                  <strong>AI/ML</strong> - Artificial Intelligence and Machine Learning. <br>
-                  <strong>Blockchain</strong> - Decentralized solutions that empower people.
-              </p>
+              <h3>What I Do ?</h3>
+              <p>I have been working as a web interface designer since. I have a love of clean, elegant styling, and I have lots of experience in the production of CSS3 and HTML5 for modern websites. I loving creating awesome as per my clients’ need. I think user experience when I try to craft something for my clients. Making a design awesome.</p>
+
+              <ul class="list-check">
+                <li>User Experience Design</li>
+                <li>Interface Design</li>
+                <li>Product Design</li>
+                <li>Branding Design</li>
+                <li>Digital Painting</li>
+                <li>Video Editing</li>
+              </ul>
             </div>
 
-            <div class="short-info wow fadeInUp">
-              <h3>Background</h3>
-              <p>I was born and raised in Brazil. <br>
-                When I was 16, my father got an opportunity to work in the US. <br>
-                My parent's were faced with a a difficult decision. Should they move to the US? <br>
-                That meant, a new language, new culture, being away from the rest of the family, and many other difficulties...<br>
-                ...I am really grateful to them for taking the hard path. It has brought me innumerous opportunities in life.<br>
-                <strong>This gives me drive to always strive to do better.</strong><br>
-              </p>
+            <div class="my-signature">
+              <img src="assets/images/sign.png" alt="">
+            </div>
+
+            <div class="download-button">
+              <a class="btn btn-info btn-lg" href="#contact"><i class="fa fa-paper-plane"></i>Send me message</a>
+              <a class="btn btn-primary btn-lg" href="#"><i class="fa fa-download"></i>download my cv</a>
             </div>
           </div>
 
@@ -158,147 +162,6 @@
       </div> <!-- /.container -->
     </section><!-- End About Section -->
 
-        <!-- Works Section -->
-        <section id="works" class="works-section section-padding">
-          <div class="container">
-            <h2 class="section-title wow fadeInUp">Projects</h2>
-    
-            <ul class="list-inline" id="filter">
-                <li><a class="active" data-group="all">All</a></li>
-                <li><a data-group="design">Design</a></li>
-                <li><a data-group="web">Web</a></li>
-                <li><a data-group="interface">Interface</a></li>
-                <li><a data-group="identety">Identity</a></li>
-            </ul>
-    
-            <div class="row">
-              <div id="grid">
-                <div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups='["all", "identety", "interface"]'>
-                  <div class="portfolio-bg">
-                    <div class="portfolio">
-                      <div class="tt-overlay"></div>
-                      <div class="links">
-                        <a class="image-link" href="assets/images/works/portfolio-1.jpg"><i class="fa fa-search-plus"></i></a>
-                        <a href="#"><i class="fa fa-link"></i></a>                          
-                      </div><!-- /.links -->
-                      <img src="assets/images/works/portfolio-1.jpg" alt="image"> 
-                      <div class="portfolio-info">
-                        <h3>Portfolio Title</h3>
-                      </div><!-- /.portfolio-info -->
-                    </div><!-- /.portfolio -->
-                  </div><!-- /.portfolio-bg -->
-                </div><!-- /.portfolio-item -->
-    
-    
-                <div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups='["all", "identety", "web"]'>
-                  <div class="portfolio-bg">
-                    <div class="portfolio">
-                      <div class="tt-overlay"></div>
-                      <div class="links">
-                        <a class="image-link" href="assets/images/works/portfolio-2.jpg"><i class="fa fa-search-plus"></i></a>
-                        <a href="#"><i class="fa fa-link"></i></a>                          
-                      </div><!-- /.links -->
-                      <img src="assets/images/works/portfolio-2.jpg" alt="image"> 
-                      <div class="portfolio-info">
-                        <h3>Portfolio Title</h3>
-                      </div><!-- /.portfolio-info -->
-                    </div><!-- /.portfolio -->
-                  </div><!-- /.portfolio-bg -->
-                </div><!-- /.portfolio-item -->
-                <div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups='["all", "interface"]'>
-                  <div class="portfolio-bg">
-                    <div class="portfolio">
-                      <div class="tt-overlay"></div>
-                      <div class="links">
-                        <a class="image-link" href="assets/images/works/portfolio-3.jpg"><i class="fa fa-search-plus"></i></a>
-                        <a href="#"><i class="fa fa-link"></i></a>                          
-                      </div><!-- /.links -->
-                      <img src="assets/images/works/portfolio-3.jpg" alt="image"> 
-                      <div class="portfolio-info">
-                        <h3>Portfolio Title</h3>
-                      </div><!-- /.portfolio-info -->
-                    </div><!-- /.portfolio -->
-                  </div><!-- /.portfolio-bg -->
-                </div><!-- /.portfolio-item -->
-                <div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups='["all", "identety", "design"]'>
-                  <div class="portfolio-bg">
-                    <div class="portfolio">
-                      <div class="tt-overlay"></div>
-                      <div class="links">
-                        <a class="image-link" href="assets/images/works/portfolio-4.jpg"><i class="fa fa-search-plus"></i></a>
-                        <a href="#"><i class="fa fa-link"></i></a>                          
-                      </div><!-- /.links -->
-                      <img src="assets/images/works/portfolio-4.jpg" alt="image"> 
-                      <div class="portfolio-info">
-                        <h3>Portfolio Title</h3>
-                      </div><!-- /.portfolio-info -->
-                    </div><!-- /.portfolio -->
-                  </div><!-- /.portfolio-bg -->
-                </div><!-- /.portfolio-item -->
-                <div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups='["all", "identety", "design"]'>
-                  <div class="portfolio-bg">
-                    <div class="portfolio">
-                      <div class="tt-overlay"></div>
-                      <div class="links">
-                        <a class="image-link" href="assets/images/works/portfolio-5.jpg"><i class="fa fa-search-plus"></i></a>
-                        <a href="#"><i class="fa fa-link"></i></a>                          
-                      </div><!-- /.links -->
-                      <img src="assets/images/works/portfolio-5.jpg" alt="image"> 
-                      <div class="portfolio-info">
-                        <h3>Portfolio Title</h3>
-                      </div><!-- /.portfolio-info -->
-                    </div><!-- /.portfolio -->
-                  </div><!-- /.portfolio-bg -->
-                </div><!-- /.portfolio-item -->
-                <div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups='["all", "identety", "design"]'>
-                  <div class="portfolio-bg">
-                    <div class="portfolio">
-                      <div class="tt-overlay"></div>
-                      <div class="links">
-                        <a class="image-link" href="assets/images/works/portfolio-6.jpg"><i class="fa fa-search-plus"></i></a>
-                        <a href="#"><i class="fa fa-link"></i></a>                          
-                      </div><!-- /.links -->
-                      <img src="assets/images/works/portfolio-6.jpg" alt="image"> 
-                      <div class="portfolio-info">
-                        <h3>Portfolio Title</h3>
-                      </div><!-- /.portfolio-info -->
-                    </div><!-- /.portfolio -->
-                  </div><!-- /.portfolio-bg -->
-                </div><!-- /.portfolio-item -->
-                <div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups='["all", "identety", "web"]'>
-                  <div class="portfolio-bg">
-                    <div class="portfolio">
-                      <div class="tt-overlay"></div>
-                      <div class="links">
-                        <a class="image-link" href="assets/images/works/portfolio-7.jpg"><i class="fa fa-search-plus"></i></a>
-                        <a href="#"><i class="fa fa-link"></i></a>                          
-                      </div><!-- /.links -->
-                      <img src="assets/images/works/portfolio-7.jpg" alt="image"> 
-                      <div class="portfolio-info">
-                        <h3>Portfolio Title</h3>
-                      </div><!-- /.portfolio-info -->
-                    </div><!-- /.portfolio -->
-                  </div><!-- /.portfolio-bg -->
-                </div><!-- /.portfolio-item -->
-                <div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups='["all", "design"]'>
-                  <div class="portfolio-bg">
-                    <div class="portfolio">
-                      <div class="tt-overlay"></div>
-                      <div class="links">
-                        <a class="image-link" href="assets/images/works/portfolio-8.jpg"><i class="fa fa-search-plus"></i></a>
-                        <a href="#"><i class="fa fa-link"></i></a>                          
-                      </div><!-- /.links -->
-                      <img src="assets/images/works/portfolio-8.jpg" alt="image"> 
-                      <div class="portfolio-info">
-                        <h3>Portfolio Title</h3>
-                      </div><!-- /.portfolio-info -->
-                    </div><!-- /.portfolio -->
-                  </div><!-- /.portfolio-bg -->
-                </div><!-- /.portfolio-item -->
-              </div><!-- /#grid -->
-            </div><!-- /.row -->
-          </div><!-- /.container -->
-        </section><!-- End Works Section -->
 
     <!-- Video Section -->
     <section id="video" class="video-section">
@@ -318,6 +181,7 @@
       <!--/.overlay-->
     </section>
     <!-- /.Video Section -->
+
 
     <!-- Resume Section -->
     <section id="resume" class="resume-section section-padding">
@@ -442,6 +306,7 @@
         </div><!-- /.container -->
     </section><!-- End Resume Section -->
 
+
     <!-- Skills Section -->
     <section id="skills" class="skills-section section-padding">
       <div class="container">
@@ -555,6 +420,150 @@
 
       </div><!-- /.container -->
     </section><!-- End Skills Section -->
+
+
+    <!-- Works Section -->
+    <section id="works" class="works-section section-padding">
+      <div class="container">
+        <h2 class="section-title wow fadeInUp">Works</h2>
+
+        <ul class="list-inline" id="filter">
+            <li><a class="active" data-group="all">All</a></li>
+            <li><a data-group="design">Design</a></li>
+            <li><a data-group="web">Web</a></li>
+            <li><a data-group="interface">Interface</a></li>
+            <li><a data-group="identety">Identity</a></li>
+        </ul>
+
+        <div class="row">
+          <div id="grid">
+            <div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups='["all", "identety", "interface"]'>
+              <div class="portfolio-bg">
+                <div class="portfolio">
+                  <div class="tt-overlay"></div>
+                  <div class="links">
+                    <a class="image-link" href="assets/images/works/portfolio-1.jpg"><i class="fa fa-search-plus"></i></a>
+                    <a href="#"><i class="fa fa-link"></i></a>                          
+                  </div><!-- /.links -->
+                  <img src="assets/images/works/portfolio-1.jpg" alt="image"> 
+                  <div class="portfolio-info">
+                    <h3>Portfolio Title</h3>
+                  </div><!-- /.portfolio-info -->
+                </div><!-- /.portfolio -->
+              </div><!-- /.portfolio-bg -->
+            </div><!-- /.portfolio-item -->
+
+
+            <div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups='["all", "identety", "web"]'>
+              <div class="portfolio-bg">
+                <div class="portfolio">
+                  <div class="tt-overlay"></div>
+                  <div class="links">
+                    <a class="image-link" href="assets/images/works/portfolio-2.jpg"><i class="fa fa-search-plus"></i></a>
+                    <a href="#"><i class="fa fa-link"></i></a>                          
+                  </div><!-- /.links -->
+                  <img src="assets/images/works/portfolio-2.jpg" alt="image"> 
+                  <div class="portfolio-info">
+                    <h3>Portfolio Title</h3>
+                  </div><!-- /.portfolio-info -->
+                </div><!-- /.portfolio -->
+              </div><!-- /.portfolio-bg -->
+            </div><!-- /.portfolio-item -->
+            <div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups='["all", "interface"]'>
+              <div class="portfolio-bg">
+                <div class="portfolio">
+                  <div class="tt-overlay"></div>
+                  <div class="links">
+                    <a class="image-link" href="assets/images/works/portfolio-3.jpg"><i class="fa fa-search-plus"></i></a>
+                    <a href="#"><i class="fa fa-link"></i></a>                          
+                  </div><!-- /.links -->
+                  <img src="assets/images/works/portfolio-3.jpg" alt="image"> 
+                  <div class="portfolio-info">
+                    <h3>Portfolio Title</h3>
+                  </div><!-- /.portfolio-info -->
+                </div><!-- /.portfolio -->
+              </div><!-- /.portfolio-bg -->
+            </div><!-- /.portfolio-item -->
+            <div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups='["all", "identety", "design"]'>
+              <div class="portfolio-bg">
+                <div class="portfolio">
+                  <div class="tt-overlay"></div>
+                  <div class="links">
+                    <a class="image-link" href="assets/images/works/portfolio-4.jpg"><i class="fa fa-search-plus"></i></a>
+                    <a href="#"><i class="fa fa-link"></i></a>                          
+                  </div><!-- /.links -->
+                  <img src="assets/images/works/portfolio-4.jpg" alt="image"> 
+                  <div class="portfolio-info">
+                    <h3>Portfolio Title</h3>
+                  </div><!-- /.portfolio-info -->
+                </div><!-- /.portfolio -->
+              </div><!-- /.portfolio-bg -->
+            </div><!-- /.portfolio-item -->
+            <div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups='["all", "identety", "design"]'>
+              <div class="portfolio-bg">
+                <div class="portfolio">
+                  <div class="tt-overlay"></div>
+                  <div class="links">
+                    <a class="image-link" href="assets/images/works/portfolio-5.jpg"><i class="fa fa-search-plus"></i></a>
+                    <a href="#"><i class="fa fa-link"></i></a>                          
+                  </div><!-- /.links -->
+                  <img src="assets/images/works/portfolio-5.jpg" alt="image"> 
+                  <div class="portfolio-info">
+                    <h3>Portfolio Title</h3>
+                  </div><!-- /.portfolio-info -->
+                </div><!-- /.portfolio -->
+              </div><!-- /.portfolio-bg -->
+            </div><!-- /.portfolio-item -->
+            <div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups='["all", "identety", "design"]'>
+              <div class="portfolio-bg">
+                <div class="portfolio">
+                  <div class="tt-overlay"></div>
+                  <div class="links">
+                    <a class="image-link" href="assets/images/works/portfolio-6.jpg"><i class="fa fa-search-plus"></i></a>
+                    <a href="#"><i class="fa fa-link"></i></a>                          
+                  </div><!-- /.links -->
+                  <img src="assets/images/works/portfolio-6.jpg" alt="image"> 
+                  <div class="portfolio-info">
+                    <h3>Portfolio Title</h3>
+                  </div><!-- /.portfolio-info -->
+                </div><!-- /.portfolio -->
+              </div><!-- /.portfolio-bg -->
+            </div><!-- /.portfolio-item -->
+            <div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups='["all", "identety", "web"]'>
+              <div class="portfolio-bg">
+                <div class="portfolio">
+                  <div class="tt-overlay"></div>
+                  <div class="links">
+                    <a class="image-link" href="assets/images/works/portfolio-7.jpg"><i class="fa fa-search-plus"></i></a>
+                    <a href="#"><i class="fa fa-link"></i></a>                          
+                  </div><!-- /.links -->
+                  <img src="assets/images/works/portfolio-7.jpg" alt="image"> 
+                  <div class="portfolio-info">
+                    <h3>Portfolio Title</h3>
+                  </div><!-- /.portfolio-info -->
+                </div><!-- /.portfolio -->
+              </div><!-- /.portfolio-bg -->
+            </div><!-- /.portfolio-item -->
+            <div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups='["all", "design"]'>
+              <div class="portfolio-bg">
+                <div class="portfolio">
+                  <div class="tt-overlay"></div>
+                  <div class="links">
+                    <a class="image-link" href="assets/images/works/portfolio-8.jpg"><i class="fa fa-search-plus"></i></a>
+                    <a href="#"><i class="fa fa-link"></i></a>                          
+                  </div><!-- /.links -->
+                  <img src="assets/images/works/portfolio-8.jpg" alt="image"> 
+                  <div class="portfolio-info">
+                    <h3>Portfolio Title</h3>
+                  </div><!-- /.portfolio-info -->
+                </div><!-- /.portfolio -->
+              </div><!-- /.portfolio-bg -->
+            </div><!-- /.portfolio-item -->
+          </div><!-- /#grid -->
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </section><!-- End Works Section -->
+
 
     <!-- Facts Section -->
     <section id="facts" class="facts-section text-center" data-stellar-vertical-offset="50" data-stellar-background-ratio="0.2">
