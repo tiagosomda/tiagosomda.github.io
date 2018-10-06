@@ -232,7 +232,7 @@ jQuery(function ($) {
     /*   
     (function () {
     
-    /* Vimeo API: http://developer.vimeo.com/player/js-api *\/
+    /* Vimeo API: https://developer.vimeo.com/player/js-api *\/
     
         var iframe = document.getElementById('nofocusvideo');
         // $f == Froogaloop

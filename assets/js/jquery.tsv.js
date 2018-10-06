@@ -8,7 +8,7 @@
  *  Copyright 2012 by Bob Kerns
  *
  *  This software is licensed as free software under the terms of the MIT License:
- *  http://www.opensource.org/licenses/mit-license.php
+ *  https://www.opensource.org/licenses/mit-license.php
  */
 
 (function ($) {
@@ -24,7 +24,7 @@
     * </p><p>
     * The IANA description of the text/tab-separated-values media type appears here:
     * </p><p>
-    * http://www.iana.org/assignments/media-types/text/tab-separated-values
+    * https://www.iana.org/assignments/media-types/text/tab-separated-values
     * </p><p>
     * This package comes with an extensive test suite, and the core TSV functionality is functionally complete.
     * </p><p>
@@ -94,13 +94,13 @@
     * Prior versions had alternate names for many of the functions. The older names are deprecated but still available. They will be removed in a future release, after 1.0.
     * </p>
     *
-    * @see http://jquery.com/
+    * @see https://jquery.com/
     * @name jQuery
     * @class jQuery Library
     */
     /**
      * TSV library plugin to jQuery
-     * @see http://jquery-tsv.googlecode.com/
+     * @see https://jquery-tsv.googlecode.com/
      * @name tsv
      * @namespace tsv
      * @memberOf jQuery
