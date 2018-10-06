@@ -157,7 +157,7 @@ jQuery(function ($) {
     });
 
 
-    // -------------------------------------------------------------
+/*     // -------------------------------------------------------------
     // Shuffle
     // -------------------------------------------------------------
 
@@ -169,7 +169,7 @@ jQuery(function ($) {
             itemSelector: '.portfolio-item'
         });
 
-        /* reshuffle when user clicks a filter item */
+        /* reshuffle when user clicks a filter item *\/
         $('#filter a').click(function (e) {
             e.preventDefault();
 
@@ -185,7 +185,7 @@ jQuery(function ($) {
         });
 
 
-    }());
+    }()); */
 
 
     // -------------------------------------------------------------
