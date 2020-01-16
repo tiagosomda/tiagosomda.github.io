@@ -3,15 +3,26 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.tiago.dev/blog/posts/my-first-post/</loc>
+    <lastmod>2020-01-16T00:17:45-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiago.dev/blog/posts/</loc>
+    <lastmod>2020-01-16T00:17:45-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiago.dev/blog/</loc>
+    <lastmod>2020-01-16T00:17:45-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.tiago.dev/blog/categories/</loc>
   </url>
   
   <url>
     <loc>https://www.tiago.dev/blog/tags/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.tiago.dev/blog/</loc>
   </url>
   
 </urlset>
