@@ -1,11 +1,10 @@
 ---
-title: "My First Post"
+title: "Fading Light : GMTK Hackathon"
 date: 2020-01-16T00:17:45-08:00
+author: "Tiago"
+description: "This is temporary post about a game a made during a hackathon"
 draft: false
 ---
-
-This is my first post... lets see what else we can do here.
-
-
 {{< youtube Xg3V1cYKxiE >}}
 
+This is a post for a game a made for the GTMK hackathon
