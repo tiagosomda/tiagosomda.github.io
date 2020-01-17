@@ -1,4 +1,4 @@
-baseURL = "https://www.tiago.dev/blog/"
+baseURL = "https://www.tiago.dev/blog"
 languageCode = "en-us"
 title = ".> tiago.dev"
 paginate = 5
@@ -6,13 +6,13 @@ publishDir = "docs"
 
 [params]
   # dir name of your blog content (default is `content/posts`)
-  contentTypeName = "posts"
+  contentTypeName = "tiago"
 
   # ["orange", "blue", "red", "green", "pink"]
   themeColor = "tiago"
 
   # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 2
+  showMenuItems = 3
 
   # show selector to switch language
   showLanguageSelector = false
@@ -49,8 +49,8 @@ publishDir = "docs"
       [[languages.en.menu.main]]
         identifier = "projects"
         name = "Projects"
-        url = "/blog/projects"
+        url = "/projects"
       [[languages.en.menu.main]]
-        identifier = "resume"
-        name = "Resume"
-        url = "/resume"
+        identifier = "reading"
+        name = "Reading"
+        url = "/reading"
