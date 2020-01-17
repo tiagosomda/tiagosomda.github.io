@@ -3,18 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.tiago.dev/blog/projects/</loc>
+    <lastmod>2020-01-16T00:17:45-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiago.dev/blog/reading/</loc>
+    <lastmod>2020-01-16T00:17:45-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.tiago.dev/blog/</loc>
     <lastmod>2020-01-16T00:17:45-08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tiago.dev/blog/posts/my-first-post/</loc>
+    <loc>https://www.tiago.dev/blog/projects/fading-light/</loc>
     <lastmod>2020-01-16T00:17:45-08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tiago.dev/blog/posts/</loc>
+    <loc>https://www.tiago.dev/blog/reading/the-way-to-the-moon/</loc>
     <lastmod>2020-01-16T00:17:45-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiago.dev/blog/posts/my-website/</loc>
+    <lastmod>2020-01-13T00:17:45-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiago.dev/blog/posts/</loc>
+    <lastmod>2020-01-13T00:17:45-08:00</lastmod>
   </url>
   
   <url>

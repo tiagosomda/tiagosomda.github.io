@@ -13,10 +13,28 @@
     
     <item>
       <title>Fading Light : GMTK Hackathon</title>
-      <link>https://www.tiago.dev/blog/posts/my-first-post/</link>
+      <link>https://www.tiago.dev/blog/projects/fading-light/</link>
       <pubDate>Thu, 16 Jan 2020 00:17:45 -0800</pubDate>
       
-      <guid>https://www.tiago.dev/blog/posts/my-first-post/</guid>
+      <guid>https://www.tiago.dev/blog/projects/fading-light/</guid>
+      <description>This is a post for a game a made for the GTMK hackathon</description>
+    </item>
+    
+    <item>
+      <title>The Man Who Knew The Way To The Moon by Todd Zwillich</title>
+      <link>https://www.tiago.dev/blog/reading/the-way-to-the-moon/</link>
+      <pubDate>Thu, 16 Jan 2020 00:17:45 -0800</pubDate>
+      
+      <guid>https://www.tiago.dev/blog/reading/the-way-to-the-moon/</guid>
+      <description>thoughts about the book</description>
+    </item>
+    
+    <item>
+      <title>My Website/Blog/Journal</title>
+      <link>https://www.tiago.dev/blog/posts/my-website/</link>
+      <pubDate>Mon, 13 Jan 2020 00:17:45 -0800</pubDate>
+      
+      <guid>https://www.tiago.dev/blog/posts/my-website/</guid>
       <description>This is a post for a game a made for the GTMK hackathon</description>
     </item>
     
