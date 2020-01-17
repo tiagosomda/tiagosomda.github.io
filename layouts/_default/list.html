@@ -1,6 +1,7 @@
 {{ define "main" }}
 
 <div class="posts">
+  <div>   {{ .Content }} </div>
   {{ $paginator := .Paginate .Site.RegularPages }}
 
   {{ range $paginator.Pages }}

@@ -9,7 +9,7 @@ publishDir = "docs"
   contentTypeName = "tiago"
 
   # ["orange", "blue", "red", "green", "pink"]
-  themeColor = "tiago"
+  themeColor = "green"
 
   # if you set this to 0, only submenu trigger will be visible
   showMenuItems = 3
