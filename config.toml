@@ -1,7 +1,6 @@
 baseURL = "https://www.tiago.dev/blog/"
 languageCode = "en-us"
 title = ".> tiago.dev"
-theme = "terminal"
 paginate = 5
 publishDir = "docs"
 
