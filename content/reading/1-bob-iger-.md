@@ -2,15 +2,15 @@
 title: "Ride of a Lifetime by Bob Iger"
 date: 2020-01-18T00:18:00-00:00
 description: "lessons learned from 15 years as CEO of Disney"
-tags: ["bob-iger"]
+tags: ["bob-iger", "audiobook"]
 draft: true
 ---
-This is seems to be a really good book!
-It is about "nurturing the good and managing the bad"
-Here I mention:
+This is seems to be a really good book!  
+The book is about "nurturing the good and managing the bad"  
+In this post I talk about:
 - Why did I decide to listen to this book?
 - What do I think I will learn from this book?
-- Initial thoughts after listening the prologue
+- My thoughts after listening the prologue
 
 # Why did I decide to listen to this book?
 I heard about Bob Iger after reading an article that mentioned that the CEO of Disney was thinking of running for the president of the USA.  
