@@ -1,12 +1,12 @@
 baseURL = "https://www.tiago.dev/blog"
 languageCode = "en-us"
-title = ".> tiago.dev"
+title = "TIAGO"
 paginate = 5
 publishDir = "docs"
 
 [params]
   # dir name of your blog content (default is `content/posts`)
-  contentTypeName = "tiago"
+  contentTypeName = "posts"
 
   # ["orange", "blue", "red", "green", "pink"]
   themeColor = "green"
@@ -33,7 +33,7 @@ publishDir = "docs"
 [languages]
   [languages.en]
     languageName = "English"
-    title = "#!tiago.dev"
+    title = "#!tiago"
     subtitle = "a place for my thoughts"
     keywords = ""
     copyright = ""
@@ -42,7 +42,7 @@ publishDir = "docs"
     readOtherPosts = "Read other posts"
 
     [languages.en.params.logo]
-      logoText = "#!tiago.dev"
+      logoText = "#!tiago"
       logoHomeLink = "/blog"
 
     [languages.en.menu]
