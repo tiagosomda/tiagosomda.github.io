@@ -3,7 +3,7 @@ title: "Ride of a Lifetime by Bob Iger"
 date: 2020-01-18T00:18:00-00:00
 description: "lessons learned from 15 years as CEO of Disney"
 tags: ["bob-iger", "audiobook"]
-draft: true
+draft: false
 ---
 This is seems to be a really good book!  
 The book is about "nurturing the good and managing the bad"  
@@ -48,7 +48,7 @@ and then he shifted to telling two stories:
 - A massacre that happened near Disney at a night club : [link](https://en.wikipedia.org/wiki/Orlando_nightclub_shooting)
 - About a child who was killed by an alligator inside Disney's resort. : [link](https://en.wikipedia.org/wiki/Orlando_nightclub_shooting)
 
-It didn't quite make sense why he was telling these stories, but then I realized that he was setting up the scenarios in which showed how compartimentalization and relying on other people is really important.
+It didn't quite make sense why he was telling these stories, but then I realized that he was setting up the scenarios in which showed how compartmentalization and relying on other people is really important.
 
 Towards the end of the prologue he mentions what this book is about.
 In his words, "this book is about how to nurture the good and deal with the bad"  
