@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://www.tiago.dev/blog/</loc>
+    <lastmod>2020-01-22T22:51:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiago.dev/blog/posts/</loc>
+    <lastmod>2020-01-22T22:51:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiago.dev/blog/posts/my-website/</loc>
+    <lastmod>2020-01-22T22:51:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiago.dev/blog/reading/</loc>
+    <lastmod>2020-01-18T00:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiago.dev/blog/tags/audiobook/</loc>
+    <lastmod>2020-01-18T00:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiago.dev/blog/tags/bob-iger/</loc>
+    <lastmod>2020-01-18T00:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiago.dev/blog/reading/1-bob-iger-/</loc>
+    <lastmod>2020-01-18T00:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiago.dev/blog/tags/</loc>
+    <lastmod>2020-01-18T00:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiago.dev/blog/projects/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.tiago.dev/blog/categories/</loc>
+  </url>
+  
+</urlset>
