@@ -4,45 +4,50 @@
   
   <url>
     <loc>https://www.tiago.dev/blog/</loc>
-    <lastmod>2020-01-16T00:17:45-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.tiago.dev/blog/projects/</loc>
-    <lastmod>2020-01-16T00:17:45-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.tiago.dev/blog/reading/</loc>
-    <lastmod>2020-01-16T00:17:45-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.tiago.dev/blog/projects/fading-light/</loc>
-    <lastmod>2020-01-16T00:17:45-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.tiago.dev/blog/reading/the-way-to-the-moon/</loc>
-    <lastmod>2020-01-16T00:17:45-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.tiago.dev/blog/posts/my-website/</loc>
-    <lastmod>2020-01-13T00:17:45-08:00</lastmod>
+    <lastmod>2020-01-22T22:51:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.tiago.dev/blog/posts/</loc>
-    <lastmod>2020-01-13T00:17:45-08:00</lastmod>
+    <lastmod>2020-01-22T22:51:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.tiago.dev/blog/categories/</loc>
+    <loc>https://www.tiago.dev/blog/posts/my-website/</loc>
+    <lastmod>2020-01-22T22:51:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiago.dev/blog/reading/</loc>
+    <lastmod>2020-01-18T00:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiago.dev/blog/tags/audiobook/</loc>
+    <lastmod>2020-01-18T00:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiago.dev/blog/tags/bob-iger/</loc>
+    <lastmod>2020-01-18T00:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiago.dev/blog/reading/1-bob-iger-/</loc>
+    <lastmod>2020-01-18T00:18:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.tiago.dev/blog/tags/</loc>
+    <lastmod>2020-01-18T00:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.tiago.dev/blog/projects/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.tiago.dev/blog/categories/</loc>
   </url>
   
 </urlset>

@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on #!tiago.dev</title>
+    <title>Posts on #!tiago</title>
     <link>https://www.tiago.dev/blog/posts/</link>
-    <description>Recent content in Posts on #!tiago.dev</description>
+    <description>Recent content in Posts on #!tiago</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Jan 2020 00:17:45 -0800</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jan 2020 22:51:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.tiago.dev/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>My Website/Blog/Journal</title>
+      <title>Website : My Tool for Growth</title>
       <link>https://www.tiago.dev/blog/posts/my-website/</link>
-      <pubDate>Mon, 13 Jan 2020 00:17:45 -0800</pubDate>
+      <pubDate>Wed, 22 Jan 2020 22:51:00 +0000</pubDate>
       
       <guid>https://www.tiago.dev/blog/posts/my-website/</guid>
-      <description>This is a post for a game a made for the GTMK hackathon</description>
+      <description>I am still shaping this tool on how I want it.
+So this post is still in progress&amp;hellip;
+Fuck Yeah List That is right. A &amp;ldquo;Fuck Yeah List&amp;rdquo;.
+I learned this &amp;ldquo;concept&amp;rdquo; from Doc James Whittaker.
+It is simple a list of accomplishments that I am proud of. So whenever I need a pick me up, I can come here and read &amp;ldquo;my fuck yeas&amp;rdquo; and feel better about myself.</description>
     </item>
     
   </channel>

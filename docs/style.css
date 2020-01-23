@@ -12,3 +12,8 @@
   --color: white;
   --border-color: rgba(255, 255, 255, .1);
 }
+
+
+.header .menu {
+  background: #1f222a;
+}
