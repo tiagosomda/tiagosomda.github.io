@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>#!tiago</title>
-    <link>https://www.tiago.dev/blog/</link>
+    <link>https://www.tiago.dev/</link>
     <description>Recent content on #!tiago</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 22 Jan 2020 22:51:00 +0000</lastBuildDate>
     
-	<atom:link href="https://www.tiago.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.tiago.dev/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Website : My Tool for Growth</title>
-      <link>https://www.tiago.dev/blog/posts/my-website/</link>
+      <link>https://www.tiago.dev/posts/my-website/</link>
       <pubDate>Wed, 22 Jan 2020 22:51:00 +0000</pubDate>
       
-      <guid>https://www.tiago.dev/blog/posts/my-website/</guid>
+      <guid>https://www.tiago.dev/posts/my-website/</guid>
       <description>I am still shaping this tool on how I want it.
 So this post is still in progress&amp;hellip;
 Fuck Yeah List That is right. A &amp;ldquo;Fuck Yeah List&amp;rdquo;.
@@ -26,10 +26,10 @@ It is simple a list of accomplishments that I am proud of. So whenever I need a 
     
     <item>
       <title>Ride of a Lifetime by Bob Iger</title>
-      <link>https://www.tiago.dev/blog/reading/1-bob-iger-/</link>
+      <link>https://www.tiago.dev/reading/1-bob-iger-/</link>
       <pubDate>Sat, 18 Jan 2020 00:18:00 +0000</pubDate>
       
-      <guid>https://www.tiago.dev/blog/reading/1-bob-iger-/</guid>
+      <guid>https://www.tiago.dev/reading/1-bob-iger-/</guid>
       <description>This is seems to be a really good book!
 The book is about &amp;ldquo;nurturing the good and managing the bad&amp;rdquo;
 In this post I talk about:
