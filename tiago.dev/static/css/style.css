@@ -1,0 +1,42 @@
+.split-content {
+    background-color: black;
+}
+
+.split-intro > h1 {
+    color: orange;
+    font-size: 18px;
+}
+
+.split-lists
+{
+    margin-top: 25px;
+}
+
+.split-lists .split-list h3
+{
+    color: orange;
+    font-weight: bold;
+}
+
+@media (max-width: 800px)
+{
+    .fs-split .split-image
+    {
+        height: 85vh;
+    }
+
+    .split-intro
+    {
+        text-align: center;
+    }
+
+    .split-intro > h1
+    {
+        font-size: 60%;
+    }
+
+    .split-lists
+    {
+        margin-top: 50px;
+    }
+}
