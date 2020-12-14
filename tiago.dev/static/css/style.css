@@ -18,6 +18,10 @@
     font-weight: bold;
 }
 
+.split-lists .split-list ul li a:hover {
+    color: orange;
+  }
+
 @media (max-width: 800px)
 {
     .fs-split .split-image

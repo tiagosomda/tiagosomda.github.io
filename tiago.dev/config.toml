@@ -19,10 +19,10 @@ copyright = "&copy;2020 @ tiago.dev"
 [params]
 
   # Metadata for search engines and social sharing
-  author = "Jenny Jones"
-  description = "Split is a centrally-divided layout for a professional online presence with a big image or video left with alongside content."
+  author = "Tiago Sommer Damasceno"
+  description = "Tiago's personal website"
   shareImage = "images/social.jpg"
-  twitterHandle = "onepagelove"
+  twitterHandle = "tiagosomda"
 
   # Favicon
   favicon = "favicon.ico"
@@ -73,7 +73,7 @@ copyright = "&copy;2020 @ tiago.dev"
 
       [[params.links.list2.link]]
         text = "Twitter"
-        url = "twitter.com/tiagosomda"
+        url = "https://www.twitter.com/tiagosomda"
 
   # Links List #3
   [[params.links]]
