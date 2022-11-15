@@ -51,15 +51,15 @@ copyright = "&copy;2020 @ tiago.dev"
       heading = "Connect"
 
       [[params.links.list1.link]]
-        text = "1. notes.tiago.dev (blog)"
+        text = "1. Blog"
         url = "https://notes.tiago.dev"
 
       [[params.links.list1.link]]
-        text = "2. LinkedIn (DM here)"
+        text = "2. LinkedIn"
         url = "https://www.linkedin.com/in/tiagosomda/"
 
       [[params.links.list1.link]]
-        text = "3. Career Planning? (I can help)"
+        text = "3. Need Career Planning?"
         url = "https://calendly.com/tiagosomda/career-mentorship"
 
   # Links List #2
@@ -68,11 +68,11 @@ copyright = "&copy;2020 @ tiago.dev"
       heading = "Game Stuff"
 
       [[params.links.list2.link]]
-        text = "1. Camp Fireworks (free game)"
+        text = "1. Camp Fireworks"
         url = "https://sidequestvr.com/app/1287/camp-fireworks"
 
       [[params.links.list2.link]]      
-        text = "2. Striking Thoughts (blog)"
+        text = "2. Striking Thoughts"
         url = "http://www.strikingthoughts.io/"  
 
   # The original template is released under the Creative Commons Attribution 3.0 License.
