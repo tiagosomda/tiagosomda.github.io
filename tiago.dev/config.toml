@@ -51,38 +51,29 @@ copyright = "&copy;2020 @ tiago.dev"
       heading = "Connect"
 
       [[params.links.list1.link]]
-        text = "Blog"
+        text = "1. notes.tiago.dev (blog)"
         url = "https://notes.tiago.dev"
 
       [[params.links.list1.link]]
-        text = "Email"
-        url = "mailto:tiago@somda.net"
+        text = "2. LinkedIn (DM here)"
+        url = "https://www.linkedin.com/in/tiagosomda/"
 
       [[params.links.list1.link]]
-        text = "GitHub"
-        url = "https://github.com/tiagosomda"
+        text = "3. Career Planning? (I can help)"
+        url = "https://calendly.com/tiagosomda/career-mentorship"
 
   # Links List #2
   [[params.links]]
     [params.links.list2]
-      heading = "Social"
+      heading = "Game Stuff"
 
       [[params.links.list2.link]]
-        text = "LinkedIn"
-        url = "https://www.linkedin.com/in/tiagosomda/"
-
-      [[params.links.list2.link]]
-        text = "Twitter"
-        url = "https://www.twitter.com/tiagosomda"
-
-  # Links List #3
-  [[params.links]]
-    [params.links.list3]
-      heading = "Projects"
-
-      [[params.links.list3.link]]
-        text = "Camp Fireworks"
+        text = "1. Camp Fireworks (free game)"
         url = "https://sidequestvr.com/app/1287/camp-fireworks"
+
+      [[params.links.list2.link]]      
+        text = "2. Striking Thoughts (blog)"
+        url = "http://www.strikingthoughts.io/"  
 
   # The original template is released under the Creative Commons Attribution 3.0 License.
   # Please keep the original attribution link when using for your own project.
