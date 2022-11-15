@@ -20,7 +20,20 @@
 
 .split-lists .split-list ul li a:hover {
     color: orange;
-  }
+}
+
+.split-bio h1,
+.split-bio h2,
+.accent
+{
+    color: orange;
+}
+
+.split-bio h2
+{
+    font-size: 16px;
+    margin-bottom: 0px;
+}
 
 @media (max-width: 800px)
 {
@@ -37,6 +50,10 @@
     .split-intro > h1
     {
         font-size: 60%;
+    }
+    .split-intro > h2
+    {
+        font-size: 30%;
     }
 
     .split-lists
