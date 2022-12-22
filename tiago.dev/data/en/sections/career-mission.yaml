@@ -1,14 +1,19 @@
 # section information
 section:
-  name: About
-  id: about
+  name: Career Mission
+  id: career-mission
   enable: true
   weight: 1
   showOnNavbar: true
-  template: sections/about.html
+  template: sections/career-mission.html
 
 # your designation
 designation: Senior Gameplay Engineer
+
+long: Help turn Virtual Reality into platform that will change the world (i.e. business, gaming, health care, and education). 
+medium:  Position myself to help achieve long term mission.
+short:  Help Ubisoft release Assassin's Creed VR. 
+
 # your company information
 company:
   name: Assassin's Creed VR

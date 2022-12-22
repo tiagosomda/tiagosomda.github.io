@@ -1,0 +1,25 @@
+{{ $sectionID := replace (lower .section.name) " " "-"  }}
+{{ if .section.id }}
+  {{ $sectionID = .section.id }}
+{{ end }}
+
+{{ $author:= site.Data.author }}
+{{ if (index site.Data site.Language.Lang).author }}
+  {{ $author = (index site.Data site.Language.Lang).author }}
+{{ end }}
+
+<div class="container anchor p-lg-5 about-section" id="{{ $sectionID }}">
+  <div class="row pt-sm-2 pt-md-4 align-self-center">
+    <!-- summary -->
+    <!-- takes up full section width if no badges/soft skills are specified -->
+    {{ if or (.softSkills) (.badges) }} <div class="col-sm-6"> {{ else }} <div class="col-sm-12"> {{ end }}
+      <h3 class="p-1">Career Mission</h3>
+      <b>Long Term:</b>
+      <p class="p-1 text-justify">{{ .long | markdownify }}</p>
+      <b>Medium Term:</b>
+      <p class="p-1 text-justify">{{ .medium | markdownify }}</p>
+      <b>Short Term:</b>
+      <p class="p-1 text-justify">{{ .short | markdownify }}</p>
+    </div>
+  </div>
+</div>
