@@ -19,7 +19,10 @@ company:
 # resume: "files/resume.pdf"
 
 # a summary about you
-summary: 'I am a passionate software engineer with over 10 years of years of working experience. I am currently working on Assassins Creed VR at [Red Storm](https://www.redstorm.com/) an [Ubisoft Entertainment](https://www.ubisoft.com/en-us/) studio'
+summary:
+ - paragraph: 'I am a passionate software engineer with over 10 years of years of working experience.'
+ - paragraph: 'Currently, I am working on Assassins Creed VR at [Red Storm](https://www.redstorm.com/) an [Ubisoft Entertainment](https://www.ubisoft.com/en-us/) studio'
+ - paragraph: 'Previously, Tiago work at Microsoft on Windows and Azure.'
 
 # your social links
 # give as many as you want. use font-awesome for the icons.
@@ -54,13 +57,17 @@ resourceLinks:
 - title: "Want career advice?"
   url: "https://calendly.com/tiagosomda/career-mentorship"
 
+careerMissionTitle: Career Mission
+
 missions:
-- missionname: Long Term
-  missioninfo: Help turn Virtual Reality into platform that will change the world (i.e. business, gaming, health care, and education).
-- missionname: Medium Term
-  missioninfo: Position myself to help achieve long term mission. 
-- missionname: Short Term
-  missioninfo: Help Ubisoft release Assassin's Creed VR. 
+- term: Long Term
+  info: Help turn Virtual Reality into platform that will change the world (i.e. business, gaming, health care, and education).
+
+- term: Medium Term
+  info: Position myself to help achieve long term mission. 
+
+- term: Short Term
+  info: Help Ubisoft release Assassin's Creed VR. 
 
 # Show your badges
 # You can show your verifiable certificates from https://www.credly.com.

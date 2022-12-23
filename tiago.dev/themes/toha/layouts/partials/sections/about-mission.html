@@ -22,9 +22,11 @@
         {{ end }}
       </h5>
       {{ end }}
+      {{ range .summary }}
       <p class="p-1 text-justify">
-        {{ .summary | markdownify }}
+        {{ .paragraph | markdownify }}
       </p>
+      {{ end }}
       <div class="text-container ml-auto">
         <ul class="social-link d-flex">
           {{ range .socialLinks }}
@@ -53,12 +55,12 @@
     </div>
     <!-- missions -->
     <div class="col-sm-6 pt-5 pl-md-4 pl-sm-3 pt-sm-0">
-      <h3 class="p-1">Career Mission</h3>
+      <h3 class="p-1">{{ .careerMissionTitle }}</h3>
       <div class="row" style="margin-left: 5px;">
         {{ range .missions }}
         <div>
-          <b>{{ .missionname }}: </b>
-          <p>{{ .missioninfo | markdownify}}</p>
+          <b>{{ .term }}: </b>
+          <p>{{ .info | markdownify}}</p>
         </div>
         {{ end }}
       </div>
