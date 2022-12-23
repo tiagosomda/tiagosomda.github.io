@@ -1,11 +1,11 @@
 # section information
 section:
   name: About
-  id: about
+  id: about-mission
   enable: true
   weight: 1
   showOnNavbar: true
-  template: sections/about.html
+  template: sections/about-mission.html
 
 # your designation
 designation: Senior Gameplay Engineer
@@ -53,6 +53,14 @@ summary: 'I am a passionate software engineer with over 10 years of years of wor
 resourceLinks:
 - title: "Want career advice?"
   url: "https://calendly.com/tiagosomda/career-mentorship"
+
+missions:
+- missionname: Long Term
+  missioninfo: Help turn Virtual Reality into platform that will change the world (i.e. business, gaming, health care, and education).
+- missionname: Medium Term
+  missioninfo: Position myself to help achieve long term mission. 
+- missionname: Short Term
+  missioninfo: Help Ubisoft release Assassin's Creed VR. 
 
 # Show your badges
 # You can show your verifiable certificates from https://www.credly.com.
