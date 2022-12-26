@@ -3,7 +3,7 @@
 other = "Hi"
 
 [posts]
-other = "Posts"
+other = "Notes"
 
 [toc_heading]
 other = "Table of Contents"
@@ -117,7 +117,7 @@ other = "More"
 other = "View Certificate"
 
 [notes]
-other = "Notes"
+other = "Gists"
 
 [disclaimer_text]
 other = "ps"
