@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>First Week @ HomeTeam GameDev</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/css/layouts/main.css"/>
+<link rel="stylesheet" href="/css/navigators/navbar.css"/>
+<link rel="stylesheet" href="/css/plyr.css"/>
+
+<link rel="stylesheet" href="/css/flag-icon.min.css"/>
+
+
+<link rel="stylesheet" href="/google-fonts/Mulish/mulish.css"/>
+
+
+<link rel="stylesheet" href="/fontawesome/css/all.min.css"/>
+
+
+
+<link rel="stylesheet" href="/css/colortheme/colortheme.css"/>
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/site/favicon_hub02d7508a1c89b2b7812eab204efeb9a_4223_42x0_resize_box_3.png" />
+
+<meta property="og:title" content="First Week @ HomeTeam GameDev" />
+<meta property="og:description" content="This is exactly what I had been looking for. So far, it is much better than I thought it would have been." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tiago.dev/posts/thoughts/hometeam-gamedev/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-06-30T00:00:00+42:00" />
+<meta property="article:modified_time" content="2021-06-30T00:00:00+42:00" />
+
+
+    
+    
+<meta name="description" content="This is exactly what I had been looking for. So far, it is much better than I thought it would have been." />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
+/>
+<link rel="stylesheet" href="/css/layouts/single.css"/>
+<link rel="stylesheet" href="/css/navigators/sidebar.css">
+
+<link rel="stylesheet" href="/css/style.css"/>
+
+
+
+    
+
+    
+        
+        
+            
+            
+            
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H4LBG7NDFZ"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-H4LBG7NDFZ', { 'anonymize_ip': false });
+}
+</script>
+
+        
+
+        
+        
+
+        
+        
+
+        
+        
+    
+
+
+
+
+</head>
+
+  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
+    <div class="container-fluid bg-dimmed wrapper">
+      
+      
+    
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+  <div class="container">
+      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/">
+      
+        <img src="/images/site/main-logo_hu9ad2f25a877e6fef77c7a3dbef5094ad_6881_42x0_resize_box_3.png" alt="Logo">
+      tiago.dev</a>
+    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse lang-selector" id="top-nav-items">
+      <ul class="navbar-nav ml-auto">
+      
+      
+        <li class="nav-item dropdown">
+
+<div id="theme-initialization" style="display: none;"
+  default-theme="system"></div>
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  <a class="dropdown-item nav-link" href="#" onclick="enableLightTheme()">
+    <img class="menu-icon-center" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  <a class="dropdown-item nav-link" href="#" onclick="enableDarkTheme()">
+    <img class="menu-icon-center" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  <a class="dropdown-item nav-link" href="#" onclick="useSystemTheme()">
+    <img class="menu-icon-center" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+</div>
+</li>
+      
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/site/main-logo_hu9ad2f25a877e6fef77c7a3dbef5094ad_6881_42x0_resize_box_3.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/site/inverted-logo_hub02d7508a1c89b2b7812eab204efeb9a_4223_42x0_resize_box_3.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Notes</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/introduction/" title="My Motto">My Motto</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i class="fas fa-minus-circle"></i><a class="active" href="/posts/thoughts/">Thoughts</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/thoughts/career-panel-at-gokic/" title="Career Panel @ GOKiC">Career Panel @ GOKiC</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active" href="/posts/thoughts/hometeam-gamedev/" title="HomeTeam GameDev">HomeTeam GameDev</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/thoughts/one-year-as-a-game-dev/" title="One Year as a Game Dev">One Year as a Game Dev</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/thoughts/starting-at-ubisoft/" title="Starting at Ubisoft">Starting at Ubisoft</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/thoughts/why-blog/" title="Why do I blog?">Why do I blog?</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/books/">Books</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/books/lessons-from-bob-iger/" title="Lessons from Bob Iger, Disney&#39;s CEO">Lessons from Bob Iger, Disney&#39;s CEO</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/books/the-way-to-the-moon/" title="The Man Who Knew The Way To The Moon by Todd Zwillich">The Man Who Knew The Way To The Moon by Todd Zwillich</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/books/the-mental-load/" title="The Mental Load">The Mental Load</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/projects/">Projects</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/projects/first-diy-table/" title="My first table!">My first table!</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/projects/perspective-wand/" title="Perspective Wand">Perspective Wand</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(/images/default-hero.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author/tiago_hu7bc9662be19278c080a6ef3a6a0d784e_48479_120x120_fit_box_3.png' alt="Author Image">
+          <h5 class="author-name">Tiago Sommer Damasceno</h5>
+          <p>Wednesday, June 30, 2021</p>
+        </div>
+
+        <div class="title">
+          <h1>First Week @ HomeTeam GameDev</h1>
+        </div>
+        
+        <div class="taxonomy-terms">
+          <ul style="padding-left: 0;">
+            
+            
+            <li class="rounded"><a href="/tags/gamedev" class="btn, btn-sm">gamedev</a></li>
+            
+            
+            <li class="rounded"><a href="/tags/career" class="btn, btn-sm">career</a></li>
+            
+            
+            <li class="rounded"><a href="/tags/unity" class="btn, btn-sm">unity</a></li>
+            
+          </ul>
+        </div>
+        
+        <div class="post-content" id="post-content">
+          <h2 id="how-did-i-stumble-onto-hometeam-gamedev">How did I stumble onto HomeTeam GameDev?</h2>
+<p>I had been looking for a place where I could collaborate with others on a game.<br>
+This is something I already do with some friends. However, I wanted to do it in a more global scale.<br>
+I started looking into open source games and I did find quite a few, but the games themselves were already pretty well stabilished and I didn&rsquo;t see much about what I could do on them.<br>
+Fast forward a couple of weeks, I am in a training and someone drops the name &ldquo;HomeTeam GameDev&rdquo;.<br>
+I take a look and I get very skeptical. &ldquo;Wait&hellip; what? a paid &lsquo;membership&rsquo; to join a group where all the games made are free and everyone owns everything they make? and all assets are made within the group itself?&rdquo;<br>
+That just sounded weird to me, but I decided to reach out and see if I liked it.</p>
+<h2 id="first-week">First Week</h2>
+<h3 id="initial-experience">Initial Experience</h3>
+<p>After I joined the group, I was amazed by the amount of content and organization of the group.<br>
+I dove right into that info and started watching the weekly videos of the project and I really liked what I saw.<br>
+I cloned the repo for two games (Ionic Defender and Duck Slayer) and I started adding things.<br>
+It was really weird at first to just make changes by following a task board without asking anyone for more info on it.<br>
+I went to sleep and next morning, someone had built upon that.<br>
+Day after day the same thing happened.<br>
+Within that week, I saw Ionic Defender go from what to me looked like a prototype into a ready to be released game. <br>
+It was trully amazing to see that happen!</p>
+<h3 id="the-mentors">The Mentors</h3>
+<p>Besides the many years of content that got created by this group on how to work well within this culture, there are also mentors in the group.<br>
+They reached out to me give me tips here and there to communicate better (i.e. use each tool for their specific purpose), read here about more details on how to pitch a game, go there to see the bio of the people in the group.<br>
+This was a great set of guidance that really helped me.</p>
+<h3 id="the-connections">The Connections</h3>
+<p>I can already tell that the people in this group are very friendly and I feel like are interests align really well.<br>
+I know that the connections I am building here will be very interesting.<br>
+The group creator (Chris DeLeon) also posted about a panel hosted by IGDA LA that was word for word answering a question I had (more on that later).<br>
+I went to the panel and heard many inspiring and motivating stories. People in the audience asked question that I had and did not know I had.<br>
+The answers were very personal and honest. I loved it. I took so many notes.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>There is something special here at HomeTeam GameDev.<br>
+I have seen similar structures at &ldquo;Maker Spaces&rdquo;, but this is different somehow.
+I am really looking forward to understanding why I think that there is something special about this structure.</p>
+
+        </div>
+
+        
+        <div class="row pl-3 pr-3">
+        
+        <div class="col-md-6 share-buttons">
+        
+            <strong>Share on:</strong>
+            
+            <a class="btn btn-sm facebook-btn" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.tiago.dev%2fposts%2fthoughts%2fhometeam-gamedev%2f" target="_blank">
+              <i class="fab fa-facebook"></i>
+            </a>
+            
+            
+                <a class="btn btn-sm twitter-btn" href="https://twitter.com/share?url=https%3a%2f%2fwww.tiago.dev%2fposts%2fthoughts%2fhometeam-gamedev%2f&text=First%20Week%20%40%20HomeTeam%20GameDev&via=tiago.dev" target="_blank">
+                  <i class="fab fa-twitter"></i>
+                </a>
+            
+            
+                <a  class="btn btn-sm reddit-btn" href="https://reddit.com/submit?url=https%3a%2f%2fwww.tiago.dev%2fposts%2fthoughts%2fhometeam-gamedev%2f&title=First%20Week%20%40%20HomeTeam%20GameDev" target="_blank">
+                  <i class="fab fa-reddit"></i>
+                </a>
+            
+            
+            
+            
+                <a class="btn btn-sm linkedin-btn" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.tiago.dev%2fposts%2fthoughts%2fhometeam-gamedev%2f&title=First%20Week%20%40%20HomeTeam%20GameDev" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            
+            
+             
+            
+                 <a class="btn btn-sm whatsapp-btn" href="https://api.whatsapp.com/send?text=First%20Week%20%40%20HomeTeam%20GameDev https%3a%2f%2fwww.tiago.dev%2fposts%2fthoughts%2fhometeam-gamedev%2f" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+            
+            
+                <a class="btn btn-sm email-btn" href="mailto:?subject=First%20Week%20%40%20HomeTeam%20GameDev&body=https%3a%2f%2fwww.tiago.dev%2fposts%2fthoughts%2fhometeam-gamedev%2f" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            
+          
+          </div>
+
+        
+        
+          
+            
+          
+          <div class="col-md-6 btn-improve-page">
+             
+               <a href="https://github.com/hugo-toha/hugo-toha.github.io/edit/main/content/posts/thoughts/hometeam-gamedev/index.md" title="Improve this page" target="_blank" rel="noopener">
+            
+                <i class="fas fa-code-branch"></i>
+                Improve this page
+              </a>
+          </div>
+        
+        </div>
+
+
+
+      
+      <hr />
+        
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+    
+    
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+    <div class="col-md-6 previous-article">
+      <a href="/posts/thoughts/career-panel-at-gokic/" title="Career Panel @ Geeking Out Kids of Color" class="btn btn-outline-info">
+        <div><i class="fas fa-chevron-circle-left"></i> Prev</div>
+        <div class="next-prev-text">Career Panel @ Geeking Out Kids of Color</div>
+      </a>
+    </div>
+  
+  
+      
+      
+        
+      
+      <div class="col-md-6 next-article">
+        <a href="/posts/thoughts/one-year-as-a-game-dev/" title="Being a Game Dev at a game studio, one year into it!" class="btn btn-outline-info">
+          <div>Next <i class="fas fa-chevron-circle-right"></i></div>
+          <div class="next-prev-text">Being a Game Dev at a game studio, one year into it!</div>
+        </a>
+      </div>
+    
+</div>
+
+      <hr />
+
+      
+      
+
+      
+      
+
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn"><i class="fas fa-chevron-circle-up"></i></a>
+  
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center pl-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-did-i-stumble-onto-hometeam-gamedev">How did I stumble onto HomeTeam GameDev?</a></li>
+    <li><a href="#first-week">First Week</a>
+      <ul>
+        <li><a href="#initial-experience">Initial Experience</a></li>
+        <li><a href="#the-mentors">The Mentors</a></li>
+        <li><a href="#the-connections">The Connections</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-left">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="https://www.tiago.dev#about-mission">About</a>
+                </li>
+              
+            
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Contact me:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:tiago@somda.net target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>tiago@somda.net</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/tiagosomda target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>tiagosomda</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/tiagosomda target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Tiago Sommer Damasceno</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+    <hr />
+    <div class="container">
+      <div class="row text-left">
+        <div class="col-md-4">
+          <a id="theme" href="https://github.com/hugo-toha/toha" target="_blank" rel="noopener">
+            <img src="/images/theme-logo_hu8376fd15465fef26ffe66b6bcf0ca686_13669_32x0_resize_box_3.png" alt="Toha Theme Logo">
+            Toha
+          </a>
+        </div>
+        <div class="col-md-4 text-center">© 2020 Copyright.</div>
+        <div class="col-md-4 text-right">
+          <a id="hugo" href="https://gohugo.io/" target="_blank" rel="noopener">Powered by
+          <img
+            src="/images/hugo-logo.svg"
+            alt="Hugo Logo"
+            height="18"
+          />
+          </a>
+        </div>
+      </div>
+    </div>
+    
+  </footer>
+
+
+    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="/js/popper.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="/js/navbar.js"></script>
+<script type="text/javascript" src="/js/plyr.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+<script type="text/javascript" src="/js/darkreader.js"></script>
+<script type="text/javascript" src="/js/darkmode-darkreader.js"></script>
+
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script src="/js/single.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

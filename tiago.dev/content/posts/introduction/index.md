@@ -4,7 +4,7 @@ date: 2021-02-12T00:00:00+42:00
 description: My first blog post where I tell you about my motto.
 menu:
   sidebar:
-    name: Hello, World (my motto)!
+    name: My Motto
     identifier: helloWorld
     weight: 10
 tags: ["hello-world", "motto"]

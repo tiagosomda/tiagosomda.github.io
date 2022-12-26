@@ -1,9 +1,9 @@
-baseURL: https://hugo-toha.github.io
+baseURL: https://www.tiago.dev
 
 languageCode: en-us
-title: "tiago.dev
-"
+title: "tiago.dev"
 theme: "toha"
+publishDir: "docs"
 
 # Manage languages
 # For any more details, you can check the official documentation: https://gohugo.io/content-management/multilingual/
@@ -86,8 +86,7 @@ params:
 
     # Enable & configure "Notes" features
     notes:
-      enable: true
-
+      enable: false
     # Enable comment feature. There, should be only one of them.
     comment:
       enable: false
