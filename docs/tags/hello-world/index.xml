@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hello-world on tiago.dev</title>
+    <link>https://www.tiago.dev/tags/hello-world/</link>
+    <description>Recent content in hello-world on tiago.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 12 Feb 2021 00:00:00 +4200</lastBuildDate><atom:link href="https://www.tiago.dev/tags/hello-world/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Hello, World! Here is my motto</title>
+      <link>https://www.tiago.dev/posts/introduction/</link>
+      <pubDate>Fri, 12 Feb 2021 00:00:00 +4200</pubDate>
+      
+      <guid>https://www.tiago.dev/posts/introduction/</guid>
+      <description>Do you have a well defined motto?
+I did not, but now I do Why&amp;hellip; &amp;hellip; did I define a motto for myself?
+Defining my motto came from the time where I took a class that my manager recommended. The class was called &amp;ldquo;How To Make Great Decisions&amp;rdquo; and I took it online through Seattle community college.
+Thank you Microsoft for sponsoring it! The class is part of a course series called &amp;ldquo;Leadership&amp;rdquo; How &amp;hellip; &amp;hellip; did I come up with my motto?</description>
+    </item>
+    
+    <item>
+      <title>Why do I blog?</title>
+      <link>https://www.tiago.dev/posts/thoughts/why-blog/</link>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +4200</pubDate>
+      
+      <guid>https://www.tiago.dev/posts/thoughts/why-blog/</guid>
+      <description>Why am I starting a blog? I am creating this blog as a sort of a personal growth record keeping.
+The posts I am creating are usually around the areas of:
+books I am reading or listening to my endless quest of working on projects a public &amp;ldquo;fuck yeah list&amp;rdquo; Books As I read and listen to book, I take notes. Doing that really helps to critically understand what I am reading and it helps to retain knowledge.</description>
+    </item>
+    
+    
+  </channel>
+</rss>

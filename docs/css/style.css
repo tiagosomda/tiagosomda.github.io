@@ -1,63 +1,46 @@
-.split-content {
-    background-color: black;
+/* This is empty CSS file intended to be overwritten by user's custom CSS file */
+
+/* ============= Device specific fixes ======= */
+
+/* Large screens such as TV */
+@media only screen and (min-width: 1824px) {
 }
 
-.split-intro > h1 {
-    color: orange;
-    font-size: 18px;
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (max-width: 1400px) {
 }
 
-.split-lists
-{
-    margin-top: 25px;
+@media (max-width: 1200px) {
 }
 
-.split-lists .split-list h3
-{
-    color: orange;
-    font-weight: bold;
+/* IPad Pro */
+@media (max-width: 1024px) {
 }
 
-.split-lists .split-list ul li a:hover {
-    color: orange;
+/*  Large devices (desktops, 992px and up) */
+
+@media (max-width: 992px) {
 }
 
-.split-bio h1,
-.split-bio h2,
-.accent
-{
-    color: orange;
+/* Medium devices (tablets, 768px and up) */
+
+@media only screen and (max-width: 768px) {
 }
 
-.split-bio h2
-{
-    font-size: 16px;
-    margin-bottom: 0px;
+/* Small devices (landscape phones, 576px and up) */
+
+@media only screen and (max-width: 576px) {
 }
 
-@media (max-width: 800px)
-{
-    .fs-split .split-image
-    {
-        height: 85vh;
-    }
+/* iPhoneX, iPhone 6,7,8 */
+@media only screen and (max-width: 375px) {
+}
 
-    .split-intro
-    {
-        text-align: center;
-    }
+/* Galaxy S5, Moto G4 */
+@media only screen and (max-width: 360px) {
+}
 
-    .split-intro > h1
-    {
-        font-size: 60%;
-    }
-    .split-intro > h2
-    {
-        font-size: 30%;
-    }
-
-    .split-lists
-    {
-        margin-top: 50px;
-    }
+/* iPhone 5 or before */
+@media only screen and (max-width: 320px) {
 }
