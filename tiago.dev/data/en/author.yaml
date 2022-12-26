@@ -1,0 +1,25 @@
+# some information about you
+name: "Tiago Sommer Damasceno"
+nickname: "Tiago"
+# greeting message before your name. it will default to "Hi! I am" if not provided
+greeting: "Hi, I am"
+image: "images/author/tiago.png"
+# give your some contact information. they will be used in the footer
+contactInfo:
+  email: "tiago@somda.net"
+  github: tiagosomda
+  linkedin: tiagosomda
+
+# some summary about what you do
+summary:
+  - and I believe XR can change the world! ...
+  - cue the Avatar theme song!
+  - Seriously tho...
+  - I want to make sure that this tech has a positive impact in the world.
+  - \"Positive impact\" ... ?
+  - I want it to bring people together
+  - and for it to improve their lives in some way as well
+  - Sounds nice, right? ... 
+  - if you think so...
+  - .. send me a DM!
+  - I am sure there is a lot we can talk about!
