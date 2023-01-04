@@ -21,9 +21,9 @@ company:
 # a summary about you
 summary:
  - paragraph: 'I am a passionate software engineer with over 10 years of years of working experience.'
+ - paragraph: 'Most of my career was at Microsoft working on Windows and Azure. However, during the pandemic in 2021, I decided that life was short and that I should follow my passion, which was game develppment... and I am loving it!'
  - paragraph: 'Currently, I am working on Assassins Creed VR at [Red Storm](https://www.redstorm.com/) an [Ubisoft Entertainment](https://www.ubisoft.com/en-us/) studio'
- - paragraph: 'Previously, Tiago work at Microsoft on Windows and Azure.'
-
+ - paragraph: One of the things I love the most is helping people get into game development, so if you want some pointers, schedule some stime with me by clicking in the button below
 # your social links
 # give as many as you want. use font-awesome for the icons.
 #socialLinks:
@@ -54,20 +54,42 @@ summary:
 # You can put custom buttons to link your relevant resources.
 # For example, you can put link for your resume.
 resourceLinks:
-- title: "Want career advice?"
+- title: "Wanna get into Game Development?"
   url: "https://calendly.com/tiagosomda/career-mentorship"
 
-careerMissionTitle: Career Mission
+careerMissionTitle: Tech Interests
 
 missions:
-- term: Long Term
-  info: Help turn Virtual Reality into platform that will change the world (i.e. business, gaming, health care, and education).
+- term: XR (eXtended Reality)
+  info: This domain is the tech I am most passionated about it. I can see myself retiring wearing an XR headset (or lenses!).
+  
+- term: Decentralization
+  info: There are cons and pros with decentralized systems. However, I personally see more pros than cons. My favorite initiatives are [Mastodon](https://joinmastodon.org), [Solid.mit.edu](https://solid.mit.edu) / [Inrupt](https://inrupt.com). Blockchain is foundation for it, but as you can see with Solid and Inrupt, not everything needs to be on a blockchain.
 
-- term: Medium Term
-  info: Position myself to help achieve long term mission. 
+- term: Artificial Intelligence
+  info: AI is changing the world. We need to make sure that we create AIs in an ethical and open way so that everyone can benefit from the power that this technology can bring. There will be private AI entities, but like Linux, the foundation should be open to all.
 
-- term: Short Term
-  info: Help Ubisoft release Assassin's Creed VR. 
+
+### START --- SOME THOUGHTS FOR SOME BLOG POST LATER?
+
+# - term: XR (eXtended Reality)
+#   info: As you can see in my career mission, XR is a big passion of mine. From the first time I tried it, I saw that this technology had so many possibilities. You could "be" as big as a galaxy or as little as a blood cell. As time has passed, the opportunities that this tech can create are immense. I like to say that VR is a tool for empathy. It can really put you in the shoes of someone else.
+
+# - term: Artificial Intelligence
+#   info: AI is changing the world. In my opinion, we need to make sure that AI is created in way that can help people do their jobs more efficiently so we can achieve more as a society. I don't believe that AI will replace humans. I think it will be something similar to how when TVs came out, everyone thought we would stop reading, or when books came out, everyone thought that we would stop telling stories. I think AI will change the world as we know it in many ways, but it won't replace humans entirely. We humans will find ways to keep busy and creating value to society in one way or another.
+
+### END --- SOME THOUGHTS FOR SOME BLOG POST LATER?
+
+
+# missions:
+# - term: XR (eXtended Reality)
+#   info: Help turn Virtual Reality into platform that will change the world (i.e. business, gaming, health care, and education).
+
+# - term: Medium Term
+#   info: Position myself to help achieve long term mission. 
+
+# - term: Short Term
+#   info: Help Ubisoft release Assassin's Creed VR. 
 
 # Show your badges
 # You can show your verifiable certificates from https://www.credly.com.

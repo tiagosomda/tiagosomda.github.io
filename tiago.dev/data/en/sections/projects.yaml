@@ -1,0 +1,74 @@
+# section information
+section:
+  name: Projects
+  id: projects
+  enable: true
+  weight: 20
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# filter buttons
+buttons:
+- name: All
+  filter: "all"
+- name: Professional
+  filter: "professional"
+- name: Hobby
+  filter: "hobby"
+- name: Game Dev
+  filter: "game-dev"
+- name: Microsoft
+  filter: "microsoft"
+- name: Ubisoft
+  filter: "ubisoft"
+
+# your projects
+projects:
+- name: Windows
+  logo: /images/sections/projects/kubernetes.png
+  role: Contributor
+  timeline: "March 2016 - October 2019"
+  #url: ""  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
+  summary: Wrote some stuff probably running on all Windows based computers everyday. Create many internal tools and services used by many developers at Microsoft.
+  tags: ["professional", "microsoft", "tools"]
+
+- name: Test Base for M365
+  logo: /images/sections/projects/tensorflow.png
+  role: Contributor
+  timeline: "October 2019 to October 2021"
+  #url: ""
+  summary: Helped prototype and then create this service which is now serving hundres of customers and helping increase the quality and securityu of many companies around the world.
+  tags: ["professional", "microsoft", "cloud"]
+
+- name: StrikingThoughts.io
+  logo: /images/sections/projects/tensorflow.png
+  role: Creative Outlet
+  timeline: "Present"
+  url: "https://www.strikingthoughts.io"
+  summary: This is where I put my game dev projects and experiments.
+  tags: ["hobby", "game-dev"]
+
+- name: Camp Fire Works
+  logo: /images/sections/projects/tensorflow.png
+  role: Hobby VR Game
+  timeline: "Present"
+  # url: "https://www.strikingthoughts.io"
+  summary: During the pandemic, some friends decided to create a VR space for us to shoot fireworks for 4th of July. We had a lot fun doing it and then playing it as well. The best part tho was hanging otu by the little fire camp and catch up.
+  tags: ["hobby", "game-dev"]
+
+- name: Perspective Want
+  logo: /images/sections/projects/tensorflow.png
+  role: Hobby VR Game
+  timeline: "Present"
+  # url: "https://www.strikingthoughts.io"
+  summary: I recreated a game mechanic from Superluminal, but in VR. I wanted to see how that felt... and OMG it feels awesome!
+  tags: ["hobby", "game-dev"]
+
+- name: Assassin's Creed VR
+  logo: /images/sections/projects/tensorflow.png
+  role: Hobby VR Game
+  timeline: "October 2021 - Present"
+  # url: "https://www.strikingthoughts.io"
+  summary: I currently working on this game. That is all I can say.
+  tags: ["professional", "ubisoft", "game-dev"]
