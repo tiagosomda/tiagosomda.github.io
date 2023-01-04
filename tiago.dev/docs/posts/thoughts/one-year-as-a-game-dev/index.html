@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Being a Game Dev at a game studio, one year into it!</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/css/layouts/main.css"/>
+<link rel="stylesheet" href="/css/navigators/navbar.css"/>
+<link rel="stylesheet" href="/css/plyr.css"/>
+
+<link rel="stylesheet" href="/css/flag-icon.min.css"/>
+
+
+<link rel="stylesheet" href="/google-fonts/Mulish/mulish.css"/>
+
+
+<link rel="stylesheet" href="/fontawesome/css/all.min.css"/>
+
+
+
+<link rel="stylesheet" href="/css/colortheme/colortheme.css"/>
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/site/favicon_hub02d7508a1c89b2b7812eab204efeb9a_4223_42x0_resize_box_3.png" />
+
+<meta property="og:title" content="Being a Game Dev at a game studio, one year into it!" />
+<meta property="og:description" content="I took some time to reflect on how it has been since I started as a game dev at Ubisoft&#39;s Red Storm Studio" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tiago.dev/posts/thoughts/one-year-as-a-game-dev/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-19T00:00:00+42:00" />
+<meta property="article:modified_time" content="2022-10-19T00:00:00+42:00" />
+
+
+    
+    
+<meta name="description" content="I took some time to reflect on how it has been since I started as a game dev at Ubisoft&#39;s Red Storm Studio" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"
+/>
+<link rel="stylesheet" href="/css/layouts/single.css"/>
+<link rel="stylesheet" href="/css/navigators/sidebar.css">
+
+<link rel="stylesheet" href="/css/style.css"/>
+
+
+
+    
+
+    
+        
+        
+            
+            
+            
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H4LBG7NDFZ"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-H4LBG7NDFZ', { 'anonymize_ip': false });
+}
+</script>
+
+        
+
+        
+        
+
+        
+        
+
+        
+        
+    
+
+
+
+
+</head>
+
+  <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">
+    <div class="container-fluid bg-dimmed wrapper">
+      
+      
+    
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+  <div class="container">
+      <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button" onclick="toggleSidebar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/">
+      
+        <img src="/images/site/main-logo_hu9ad2f25a877e6fef77c7a3dbef5094ad_6881_42x0_resize_box_3.png" alt="Logo">
+      tiago.dev</a>
+    <button class="navbar-toggler navbar-light" id="toc-toggler" type="button" onclick="toggleTOC()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse lang-selector" id="top-nav-items">
+      <ul class="navbar-nav ml-auto">
+      
+      
+        <li class="nav-item dropdown">
+
+<div id="theme-initialization" style="display: none;"
+  default-theme="system"></div>
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  <a class="dropdown-item nav-link" href="#" onclick="enableLightTheme()">
+    <img class="menu-icon-center" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  <a class="dropdown-item nav-link" href="#" onclick="enableDarkTheme()">
+    <img class="menu-icon-center" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  <a class="dropdown-item nav-link" href="#" onclick="useSystemTheme()">
+    <img class="menu-icon-center" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+</div>
+</li>
+      
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/site/main-logo_hu9ad2f25a877e6fef77c7a3dbef5094ad_6881_42x0_resize_box_3.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/site/inverted-logo_hub02d7508a1c89b2b7812eab204efeb9a_4223_42x0_resize_box_3.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Notes</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/introduction/" title="My Motto">My Motto</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i class="fas fa-minus-circle"></i><a class="active" href="/posts/thoughts/">Thoughts</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/thoughts/career-panel-at-gokic/" title="Career Panel @ GOKiC">Career Panel @ GOKiC</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/thoughts/hometeam-gamedev/" title="HomeTeam GameDev">HomeTeam GameDev</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active" href="/posts/thoughts/one-year-as-a-game-dev/" title="One Year as a Game Dev">One Year as a Game Dev</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/thoughts/starting-at-ubisoft/" title="Starting at Ubisoft">Starting at Ubisoft</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/thoughts/why-blog/" title="Why do I blog?">Why do I blog?</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/books/">Books</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/books/lessons-from-bob-iger/" title="Lessons from Bob Iger, Disney&#39;s CEO">Lessons from Bob Iger, Disney&#39;s CEO</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/books/the-way-to-the-moon/" title="The Man Who Knew The Way To The Moon by Todd Zwillich">The Man Who Knew The Way To The Moon by Todd Zwillich</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/books/the-mental-load/" title="The Mental Load">The Mental Load</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i class="fas fa-plus-circle"></i><a class="" href="/posts/projects/">Projects</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/projects/first-diy-table/" title="My first table!">My first table!</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class="" href="/posts/projects/perspective-wand/" title="Perspective Wand">Perspective Wand</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(/images/default-hero.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author/tiago_hu7bc9662be19278c080a6ef3a6a0d784e_48479_120x120_fit_box_3.png' alt="Author Image">
+          <h5 class="author-name">Tiago Sommer Damasceno</h5>
+          <p>Wednesday, October 19, 2022</p>
+        </div>
+
+        <div class="title">
+          <h1>Being a Game Dev at a game studio, one year into it!</h1>
+        </div>
+        
+        <div class="taxonomy-terms">
+          <ul style="padding-left: 0;">
+            
+            
+            <li class="rounded"><a href="/tags/fuck-yeah" class="btn, btn-sm">fuck-yeah</a></li>
+            
+            
+            <li class="rounded"><a href="/tags/career" class="btn, btn-sm">career</a></li>
+            
+          </ul>
+        </div>
+        
+        <div class="post-content" id="post-content">
+          <p>so! 😊😍<br>
+Today marks 1 year since I started my career as a professional gameplay engineer!<br>
+yay!</p>
+<p>TL;DR:</p>
+<ul>
+<li>12 year old Tiago would be proud! ❤️</li>
+<li>32 year old Tiago is loving the change and still learning every day.</li>
+</ul>
+<h2 id="who-did-i-write-this-for">Who did I write this for?</h2>
+<p>myself.</p>
+<ul>
+<li>I am not spending a lot of energy on making sure other people will be able to understand what I wrote.</li>
+<li>This is a reflection and celebration that I want to record for future Tiago.</li>
+</ul>
+<p>However, if you do end up reading through and you have any comments, thoughts, questions, etc - feel free to reach out to me!</p>
+<p>For comparison, this is how I felt a few days prior to starting as a full timeg game dev:s</p>
+<ul>
+<li>link to post</li>
+</ul>
+<p>note: as I finish writing this&hellip; I have realized how massive it became&hellip; 😵</p>
+<h3 id="fuck-yeahs">Fuck Yeahs!</h3>
+<p>in other words, celebratory highlights 😊</p>
+<ul>
+<li>😎 I am working on a game for one of the biggest brands and studios in the world!</li>
+<li>😍 The people I work with now are as awesome as the people I used to work with before!</li>
+<li>💯 I work with people in many different roles and backgrounds.
+<ul>
+<li>I really enjoy this!</li>
+<li>So many kick ass gameplay engineers, producers, technical artists, vfx artists, writers and the list goes on &hellip;</li>
+</ul>
+</li>
+<li>🤯 If somone told me that I would learn as much I have in this one year&hellip; I would not believe it. The amount I technical knowledge I gained in this one year has been mind blowing to me. So many talented people to learn from and get feedback from! So many cool challenges to tackle. I learn something new-almost-every-day!</li>
+<li>😎 I am now a lead for one of the coolest components in the project!</li>
+<li>💪 I got promoted to senior gameplay engineer!</li>
+<li>🥰 I got the title role of &ldquo;Everything Everywhere All At Once&rdquo; in a game jam hosted by Red Storm along with NCSU students (to be honest, I think this is the highlight of the year. I feel very honoured. I love this movie.)</li>
+</ul>
+<h2 id="looking-back-at-my-time-at-microsoft">Looking back at my time at Microsoft</h2>
+<p>I am really grateful for my time there.<br>
+The time I spent there really shaped the growth mindset that I have today.<br>
+That is largely due to the amazing managers, peers, leaders, mentors that I had.<br>
+Making the decision to leave was the hardest career decision I ever did.</p>
+<h2 id="looking-back-at-making-the-transition">Looking back at making the transition</h2>
+<p>I knew I had to make a switch and work on making games as a full time job.<br>
+It is something I wanted to do since I was 12. Life took me to other paths and I wouldn&rsquo;t change a thing. Still, that was something itching in my mind&hellip;<br>
+&hellip; but it was hard to act on it. I was getting paid really well, working with a kickass team on a kickass project.<br>
+I was in a very confortable zone.</p>
+<p>Being in a confortable zone is also why I wanted to make a change.<br>
+I was too confortable and not expanding my skill set into the areas that I deeply wanted to.</p>
+<h3 id="mentors">Mentors</h3>
+<p>They really helped me ask myself questions that I wasn&rsquo;t thinking about.<br>
+Talking to them about it helped me understand the reasons why I wanted to make a change.</p>
+<h3 id="hometeamgamedev">HomeTeamGameDev</h3>
+<p>The HomeTeamGameDev group helped me solidify that I really enjoyed making games.<br>
+This is actually a super fun group. Hopefully my personal life will get into a more stable routine soon and I will be able to join the group again.</p>
+<h3 id="gain-confidence-to-even-apply-for-jobs">Gain confidence to even apply for jobs</h3>
+<p>The main person to call out was Chris DeLeon (one of the perks of HomeTeamGameDev is that you get to have some mentorship sessions with people that are/were in the game industry) I scheduled one with Chris and he was able (maybe without knowing) give me the confidence to actually apply for a job.<br>
+I remember him saying something to the effect that he saw I had the skills and what I needed was to figure out a way of getting my foot in the door.</p>
+<h3 id="support-from-my-wife">Support from my wife</h3>
+<p>My wife was extremely supportive. Emotionally and financially.<br>
+She knows me like no one else and she knew I had to make the switch.<br>
+She was also onboard with making any changes in our life to account for the pay cut I would be getting.</p>
+<h2 id="looking-back-at-my-first-year-at-ubisofts-red-storm-studio">Looking back at my first year at Ubisoft&rsquo;s Red Storm studio</h2>
+<p>This is the part that I revist what I wrote one year ago.</p>
+<h3 id="first-few-days-weeks-months">First few days, weeks, months&hellip;</h3>
+<p>This period was emotionally tough.</p>
+<p>As a recap&hellip;<br>
+Prior to joining, I was feeling anxious and insecure:</p>
+<ul>
+<li>&ldquo;How fast can I start making an impact?&rdquo;</li>
+<li>&ldquo;Will people judge me if I don&rsquo;t know how to do &lsquo;X&rsquo;?&rdquo;</li>
+<li>&ldquo;Am I doing the best decision here?&rdquo;</li>
+</ul>
+<p>Once I joined, I felt overwhelmed:</p>
+<ul>
+<li>&ldquo;wow&hellip; I have never used Jira and Confluence before&hellip; this looks wildly confusing&rdquo;</li>
+<li>&ldquo;so many custom tools and processes&hellip;&rdquo;</li>
+<li>&ldquo;how do I wrap my head around this game&rsquo;s code?&rdquo;</li>
+<li>&ldquo;what are all these acronyms?&rdquo;</li>
+<li>&ldquo;What do people mean when they say X, Y, Z&hellip; ? it sounds like this word has more meaning that it seems&hellip;&rdquo;</li>
+<li>the list goes on&hellip;</li>
+</ul>
+<p>As weeks and months went by, I started to understand and to become more familiar with the tools, processes, roles, and structures.<br>
+Like I said, the people I work with are amazing!</p>
+<p>to be specific, here are the key people/areas that I think were very important to me in that period.</p>
+<h4 id="my-onboarding-buddy-nick">My onboarding buddy, Nick</h4>
+<p>Nick checked in with me pretty much every day and almost always finished our conversations with a version of &ldquo;anything else on your mind? Anything confusing or that needs clarification?&rdquo;.<br>
+That was extremely helpful, I am super grateful for his help.</p>
+<h4 id="my-manager-bobby">My manager, Bobby</h4>
+<p>Bobby was super helpful in so many different ways. He still is - almost every day.<br>
+So when I joined, he made me feel part of the team from day one.<br>
+Bobby has, what it seems to me, a very natural way of making people feel included and with connecting with people.
+I learned a lot from just observing his communication style.</p>
+<p>From a technical stand point,<br>
+Bobby helped me - a lot - in ramping up on the various systems in our team, in the project and the structure of the project at a code and organizational level. What I appreciated the most is how he was able to make time to guide me through all that.</p>
+<h4 id="my-immediate-team">My immediate team!!</h4>
+<p>This is the best team in the project! no bias&hellip;<br>
+One of my biggest fears about moving to a whole new company/team was&hellip;<br>
+&ldquo;what if I end up working with a bunch of assholes?&rdquo;<br>
+My immediate team put those worries away in no time, everyone was so welcoming and friendly! ❤️</p>
+<p>I am trying to find words to describe how they went about it&hellip;<br>
+&hellip; and as I try to put into words, all I can do is smile from remembering how I felt xD (too emotional?)<br>
+So I guess&hellip; it was all the little things? Like daily off topic chats, jokes and so on.</p>
+<h4 id="the-it-tech-team-content-management">The IT, Tech team, content management!</h4>
+<p>These are &ldquo;the heroes we need&hellip; not the ones we deserve&hellip;&rdquo; <br>
+I don&rsquo;t think we thank them enough. They keep project alive in so many ways.
+I had little to no downtime during my onboarding, all issues I had were quickly resolved and most of my onboarding was done on day one.  This keeps being true every week.</p>
+<h3 id="making-an-impact-and-gaining-confidence--58-months-in">Making an impact and gaining confidence  (5~8 months in?)</h3>
+<p>One of the best advice I heard about making an impact on a team was actually really simple&hellip;</p>
+<ul>
+<li>&ldquo;Be helpful&hellip; Listen to what people are saying and help them.&rdquo;</li>
+</ul>
+<p>In more specific terms,<br>
+what are they trying to achieve? what issues are they having? what help are they asking for? what is the issue that keeps getting discussed?<br>
+Once you know what these things are, go and help solve it.</p>
+<p>Once you have done that for a while and it is your turn to bring up problems that you need help with, people will likely listen to you and maybe even help. (don&rsquo;t count on getting help, but you will likely get help from people you helped before).</p>
+<p>So it is clear how that helps in making an impact.<br>
+How about gaining confidence?<br>
+Solving problems that other people are having, allows you to get gain confidence that you belong in this group because you are solvig problems that they have.</p>
+<p>I have used this approach in different settings/situations.<br>
+It has worked really well and I will likely continue to use it.</p>
+<h3 id="present-time">Present time</h3>
+<p>I am now a lead on one the coolest components in our project.<br>
+I am super happy and proud to be doing that.</p>
+<p>Around the same time, I go promoted to a senior level!</p>
+<p>There is a lot non-programming work that comes with it, and a lot of work and people management. This isn&rsquo;t new to me. It is not my favorite type of work, but I do know that I can do it well, so I am more than happy to setup up to the role.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This year has been a blast!<br>
+Read that fuck yeah list again!</p>
+
+        </div>
+
+        
+        <div class="row pl-3 pr-3">
+        
+        <div class="col-md-6 share-buttons">
+        
+            <strong>Share on:</strong>
+            
+            <a class="btn btn-sm facebook-btn" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.tiago.dev%2fposts%2fthoughts%2fone-year-as-a-game-dev%2f" target="_blank">
+              <i class="fab fa-facebook"></i>
+            </a>
+            
+            
+                <a class="btn btn-sm twitter-btn" href="https://twitter.com/share?url=https%3a%2f%2fwww.tiago.dev%2fposts%2fthoughts%2fone-year-as-a-game-dev%2f&text=Being%20a%20Game%20Dev%20at%20a%20game%20studio%2c%20one%20year%20into%20it%21&via=tiago.dev" target="_blank">
+                  <i class="fab fa-twitter"></i>
+                </a>
+            
+            
+                <a  class="btn btn-sm reddit-btn" href="https://reddit.com/submit?url=https%3a%2f%2fwww.tiago.dev%2fposts%2fthoughts%2fone-year-as-a-game-dev%2f&title=Being%20a%20Game%20Dev%20at%20a%20game%20studio%2c%20one%20year%20into%20it%21" target="_blank">
+                  <i class="fab fa-reddit"></i>
+                </a>
+            
+            
+            
+            
+                <a class="btn btn-sm linkedin-btn" href="https://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.tiago.dev%2fposts%2fthoughts%2fone-year-as-a-game-dev%2f&title=Being%20a%20Game%20Dev%20at%20a%20game%20studio%2c%20one%20year%20into%20it%21" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            
+            
+             
+            
+                 <a class="btn btn-sm whatsapp-btn" href="https://api.whatsapp.com/send?text=Being%20a%20Game%20Dev%20at%20a%20game%20studio%2c%20one%20year%20into%20it%21 https%3a%2f%2fwww.tiago.dev%2fposts%2fthoughts%2fone-year-as-a-game-dev%2f" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+            
+            
+                <a class="btn btn-sm email-btn" href="mailto:?subject=Being%20a%20Game%20Dev%20at%20a%20game%20studio%2c%20one%20year%20into%20it%21&body=https%3a%2f%2fwww.tiago.dev%2fposts%2fthoughts%2fone-year-as-a-game-dev%2f" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            
+          
+          </div>
+
+        
+        
+          
+            
+          
+          <div class="col-md-6 btn-improve-page">
+             
+               <a href="https://github.com/hugo-toha/hugo-toha.github.io/edit/main/content/posts/thoughts/one-year-as-a-game-dev/index.md" title="Improve this page" target="_blank" rel="noopener">
+            
+                <i class="fas fa-code-branch"></i>
+                Improve this page
+              </a>
+          </div>
+        
+        </div>
+
+
+
+      
+      <hr />
+        
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+    
+    
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+    <div class="col-md-6 previous-article">
+      <a href="/posts/thoughts/hometeam-gamedev/" title="First Week @ HomeTeam GameDev" class="btn btn-outline-info">
+        <div><i class="fas fa-chevron-circle-left"></i> Prev</div>
+        <div class="next-prev-text">First Week @ HomeTeam GameDev</div>
+      </a>
+    </div>
+  
+  
+      
+      
+        
+      
+      <div class="col-md-6 next-article">
+        <a href="/posts/thoughts/starting-at-ubisoft/" title="Starting at Ubisoft!" class="btn btn-outline-info">
+          <div>Next <i class="fas fa-chevron-circle-right"></i></div>
+          <div class="next-prev-text">Starting at Ubisoft!</div>
+        </a>
+      </div>
+    
+</div>
+
+      <hr />
+
+      
+      
+
+      
+      
+
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn"><i class="fas fa-chevron-circle-up"></i></a>
+  
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center pl-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#who-did-i-write-this-for">Who did I write this for?</a>
+      <ul>
+        <li><a href="#fuck-yeahs">Fuck Yeahs!</a></li>
+      </ul>
+    </li>
+    <li><a href="#looking-back-at-my-time-at-microsoft">Looking back at my time at Microsoft</a></li>
+    <li><a href="#looking-back-at-making-the-transition">Looking back at making the transition</a>
+      <ul>
+        <li><a href="#mentors">Mentors</a></li>
+        <li><a href="#hometeamgamedev">HomeTeamGameDev</a></li>
+        <li><a href="#gain-confidence-to-even-apply-for-jobs">Gain confidence to even apply for jobs</a></li>
+        <li><a href="#support-from-my-wife">Support from my wife</a></li>
+      </ul>
+    </li>
+    <li><a href="#looking-back-at-my-first-year-at-ubisofts-red-storm-studio">Looking back at my first year at Ubisoft&rsquo;s Red Storm studio</a>
+      <ul>
+        <li><a href="#first-few-days-weeks-months">First few days, weeks, months&hellip;</a>
+          <ul>
+            <li><a href="#my-onboarding-buddy-nick">My onboarding buddy, Nick</a></li>
+            <li><a href="#my-manager-bobby">My manager, Bobby</a></li>
+            <li><a href="#my-immediate-team">My immediate team!!</a></li>
+            <li><a href="#the-it-tech-team-content-management">The IT, Tech team, content management!</a></li>
+          </ul>
+        </li>
+        <li><a href="#making-an-impact-and-gaining-confidence--58-months-in">Making an impact and gaining confidence  (5~8 months in?)</a></li>
+        <li><a href="#present-time">Present time</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-left">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="https://www.tiago.dev#about-mission">About</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="https://www.tiago.dev#careermission">Career Mission</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="https://www.tiago.dev#projects">Projects</a>
+                </li>
+              
+              
+            
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Contact me:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:tiago@somda.net target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>tiago@somda.net</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/tiagosomda target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>tiagosomda</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/tiagosomda target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Tiago Sommer Damasceno</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+    <hr />
+    <div class="container">
+      <div class="row text-left">
+        <div class="col-md-4">
+          <a id="theme" href="https://github.com/hugo-toha/toha" target="_blank" rel="noopener">
+            <img src="/images/theme-logo_hu8376fd15465fef26ffe66b6bcf0ca686_13669_32x0_resize_box_3.png" alt="Toha Theme Logo">
+            Toha
+          </a>
+        </div>
+        <div class="col-md-4 text-center">© 2023 Copyright.</div>
+        <div class="col-md-4 text-right">
+          <a id="hugo" href="https://gohugo.io/" target="_blank" rel="noopener">Powered by
+          <img
+            src="/images/hugo-logo.svg"
+            alt="Hugo Logo"
+            height="18"
+          />
+          </a>
+        </div>
+      </div>
+    </div>
+    
+  </footer>
+
+
+    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="/js/popper.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="/js/navbar.js"></script>
+<script type="text/javascript" src="/js/plyr.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+<script type="text/javascript" src="/js/darkreader.js"></script>
+<script type="text/javascript" src="/js/darkmode-darkreader.js"></script>
+
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+<script src="/js/single.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

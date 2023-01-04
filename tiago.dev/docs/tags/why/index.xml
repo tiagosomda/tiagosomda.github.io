@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>why on tiago.dev</title>
+    <link>https://www.tiago.dev/tags/why/</link>
+    <description>Recent content in why on tiago.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Jan 2021 00:00:00 +4200</lastBuildDate><atom:link href="https://www.tiago.dev/tags/why/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Why do I blog?</title>
+      <link>https://www.tiago.dev/posts/thoughts/why-blog/</link>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +4200</pubDate>
+      
+      <guid>https://www.tiago.dev/posts/thoughts/why-blog/</guid>
+      <description>Why am I starting a blog? I am creating this blog as a sort of a personal growth record keeping.
+The posts I am creating are usually around the areas of:
+books I am reading or listening to my endless quest of working on projects a public &amp;ldquo;fuck yeah list&amp;rdquo; Books As I read and listen to book, I take notes. Doing that really helps to critically understand what I am reading and it helps to retain knowledge.</description>
+    </item>
+    
+    
+  </channel>
+</rss>
