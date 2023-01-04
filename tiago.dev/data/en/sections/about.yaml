@@ -23,7 +23,7 @@ summary:
  - paragraph: 'I am a passionate software engineer with over 10 years of years of working experience.'
  - paragraph: 'Most of my career was at Microsoft working on Windows and Azure. However, during the pandemic in 2021, I decided that life was short and that I should follow my passion, which was game develppment... and I am loving it!'
  - paragraph: 'Currently, I am working on Assassins Creed VR at [Red Storm](https://www.redstorm.com/) an [Ubisoft Entertainment](https://www.ubisoft.com/en-us/) studio'
-
+ - paragraph: One of the things I love the most is helping people get into game development, so if you want some pointers, schedule some stime with me by clicking in the button below
 # your social links
 # give as many as you want. use font-awesome for the icons.
 #socialLinks:
@@ -54,7 +54,7 @@ summary:
 # You can put custom buttons to link your relevant resources.
 # For example, you can put link for your resume.
 resourceLinks:
-- title: "Want career advice?"
+- title: "Wanna get into Game Development?"
   url: "https://calendly.com/tiagosomda/career-mentorship"
 
 careerMissionTitle: Tech Interests

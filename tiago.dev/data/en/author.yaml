@@ -2,7 +2,7 @@
 name: "Tiago Sommer Damasceno"
 nickname: "Tiago"
 # greeting message before your name. it will default to "Hi! I am" if not provided
-greeting: "Hi, I am"
+greeting: "Sup MAGFest! I am "
 image: "images/author/tiago.png"
 # give your some contact information. they will be used in the footer
 contactInfo:
@@ -12,14 +12,22 @@ contactInfo:
 
 # some summary about what you do
 summary:
-  - and I believe XR can change the world! ...
-  - cue the Avatar theme song!
-  - Seriously tho...
-  - I want to make sure that this tech has a positive impact in the world.
-  - \"Positive impact\" ... ?
-  - I want it to bring people together
-  - and for it to improve their lives in some way as well
-  - Sounds nice, right? ... 
-  - if you think so...
-  - .. send me a DM!
-  - I am sure there is a lot we can talk about!
+  - Want some free stickers?
+  - If you can find me, I will give you one!
+  - I am most likely wearing a VR headset...
+  - ... while wearing some Avatar The Last Air Bender gear
+  - I am also volunteering at the VR Zone area (and a couple of others)
+  - see yah then!
+
+  # summary:
+  # - and I believe XR can change the world! ...
+  # - cue the Avatar theme song!
+  # - Seriously tho...
+  # - I want to make sure that this tech has a positive impact in the world.
+  # - \"Positive impact\" ... ?
+  # - I want it to bring people together
+  # - and for it to improve their lives in some way as well
+  # - Sounds nice, right? ... 
+  # - if you think so...
+  # - .. send me a DM!
+  # - I am sure there is a lot we can talk about!

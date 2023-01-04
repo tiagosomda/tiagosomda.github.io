@@ -3,7 +3,7 @@ section:
   name: Projects
   id: projects
   enable: true
-  weight: 30
+  weight: 20
   showOnNavbar: true
   # Can optionally hide the title in sections
   # hideTitle: true
@@ -14,51 +14,61 @@ buttons:
   filter: "all"
 - name: Professional
   filter: "professional"
-- name: Academic
-  filter: "academic"
 - name: Hobby
   filter: "hobby"
+- name: Game Dev
+  filter: "game-dev"
+- name: Microsoft
+  filter: "microsoft"
+- name: Ubisoft
+  filter: "ubisoft"
 
 # your projects
 projects:
-- name: Kubernetes
+- name: Windows
   logo: /images/sections/projects/kubernetes.png
   role: Contributor
-  timeline: "March 2018 - Present"
-  repo: https://github.com/kubernetes/kubernetes # If your project is a public repo on GitHub, then provide this link. it will show star count.
+  timeline: "March 2016 - October 2019"
   #url: ""  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
-  summary: Production-Grade Container Scheduling and Management.
-  tags: ["professional", "kubernetes", "cloud"]
+  summary: Wrote some stuff probably running on all Windows based computers everyday. Create many internal tools and services used by many developers at Microsoft.
+  tags: ["professional", "microsoft", "tools"]
 
-- name: Tensorflow
+- name: Test Base for M365
   logo: /images/sections/projects/tensorflow.png
-  role: Developer
-  timeline: "Jun 2018 - Present"
-  repo: https://github.com/tensorflow/tensorflow
+  role: Contributor
+  timeline: "October 2019 to October 2021"
   #url: ""
-  summary: An Open Source Machine Learning Framework for Everyone.
-  tags: ["professional", "machine-learning"]
+  summary: Helped prototype and then create this service which is now serving hundres of customers and helping increase the quality and securityu of many companies around the world.
+  tags: ["professional", "microsoft", "cloud"]
 
-- name: A sample academic paper
-  role: Team Lead
-  timeline: "Jan 2017 - Nov 2017"
-  url: "https://www.example.com"
-  summary: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente eius reprehenderit animi suscipit autem eligendi esse amet aliquid error eum. Accusantium distinctio soluta aliquid quas placeat modi suscipit eligendi nisi.
-  tags: ["academic","iot"]
+- name: StrikingThoughts.io
+  logo: /images/sections/projects/tensorflow.png
+  role: Creative Outlet
+  timeline: "Present"
+  url: "https://www.strikingthoughts.io"
+  summary: This is where I put my game dev projects and experiments.
+  tags: ["hobby", "game-dev"]
 
-- name: Nocode
-  logo: /images/sections/projects/no-code.png
-  role: Nothing
-  timeline: "Oct 2019 - Dec 2019"
-  repo: https://github.com/kelseyhightower/nocode
-  #url: ""
-  summary: The best way to write secure and reliable applications. Write nothing; deploy nowhere.
-  tags: ["hobby", "fun"]
+- name: Camp Fire Works
+  logo: /images/sections/projects/tensorflow.png
+  role: Hobby VR Game
+  timeline: "Present"
+  # url: "https://www.strikingthoughts.io"
+  summary: During the pandemic, some friends decided to create a VR space for us to shoot fireworks for 4th of July. We had a lot fun doing it and then playing it as well. The best part tho was hanging otu by the little fire camp and catch up.
+  tags: ["hobby", "game-dev"]
 
-- name: Toha
-  logo: /images/sections/projects/toha.png
-  role: Owner
-  timeline: "Jun 2019 - Present"
-  repo: https://github.com/hossainemruz/toha
-  summary: A Hugo theme for personal portfolio.
-  tags: ["hobby","hugo","theme","professional"]
+- name: Perspective Want
+  logo: /images/sections/projects/tensorflow.png
+  role: Hobby VR Game
+  timeline: "Present"
+  # url: "https://www.strikingthoughts.io"
+  summary: I recreated a game mechanic from Superluminal, but in VR. I wanted to see how that felt... and OMG it feels awesome!
+  tags: ["hobby", "game-dev"]
+
+- name: Assassin's Creed VR
+  logo: /images/sections/projects/tensorflow.png
+  role: Hobby VR Game
+  timeline: "October 2021 - Present"
+  # url: "https://www.strikingthoughts.io"
+  summary: I currently working on this game. That is all I can say.
+  tags: ["professional", "ubisoft", "game-dev"]

@@ -1,10 +1,10 @@
 # section information
 section:
-  name: Recent Notes
+  name: My most recent notes
   id: recent-posts
   enable: true
-  weight: 20
-  showOnNavbar: true
+  weight: 30
+  showOnNavbar: false
   # Can optionally hide the title in sections
   # hideTitle: true
 
