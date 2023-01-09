@@ -9,6 +9,7 @@ contactInfo:
   email: "tiago@somda.net"
   github: tiagosomda
   linkedin: tiagosomda
+  mastodon: arvr.social/@TiagoSomda
 
 # some summary about what you do
 summary:
@@ -16,7 +17,7 @@ summary:
   - Maker
   - Traveler
   - believer that XR can and is changing the world
-  
+
   # summary:
   # - and I believe XR can change the world! ...
   # - cue the Avatar theme song!
