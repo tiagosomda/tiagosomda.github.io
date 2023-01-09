@@ -20,10 +20,10 @@ company:
 
 # a summary about you
 summary:
- - paragraph: 'I am a passionate software engineer with over 10 years of years of working experience.'
- - paragraph: 'Most of my career was at Microsoft working on Windows and Azure. However, during the pandemic in 2021, I decided that life was short and that I should follow my passion, which was game develppment... and I am loving it!'
- - paragraph: 'Currently, I am working on Assassins Creed VR at [Red Storm](https://www.redstorm.com/) an [Ubisoft Entertainment](https://www.ubisoft.com/en-us/) studio'
- - paragraph: One of the things I love the most is helping people get into game development, so if you want some pointers, schedule some stime with me by clicking in the button below
+ - paragraph: 'I am a passionate software engineer with over 10 years of working experience.'
+ - paragraph: 'Most of my career was at Microsoft working on Windows and Azure. However, during the pandemic in 2021, I understood that life was short and then I decided that I should follow my passion, which was game develppment...'
+ - paragraph: '... I am currently working on Assassins Creed VR at [Red Storm](https://www.redstorm.com/) an [Ubisoft Entertainment](https://www.ubisoft.com/en-us/) studio **and I am loving it!**'
+ - paragraph: Another passion of mine is to help people get into STEM and Game Development. If this is something that interests you, I would love to chat with you!
 # your social links
 # give as many as you want. use font-awesome for the icons.
 #socialLinks:
@@ -54,20 +54,20 @@ summary:
 # You can put custom buttons to link your relevant resources.
 # For example, you can put link for your resume.
 resourceLinks:
-- title: "Wanna get into Game Development?"
+- title: "Let's chat!"
   url: "https://calendly.com/tiagosomda/career-mentorship"
 
 careerMissionTitle: Tech Interests
 
 missions:
 - term: XR (eXtended Reality)
-  info: This domain is the tech I am most passionated about it. I can see myself retiring wearing an XR headset (or lenses!).
+  info: This domain is the tech I am most passionated about it. There is still so much to build and create in this domain. I can easily see myself retiring wearing an XR headset (and/or lenses!).
   
 - term: Decentralization
-  info: There are cons and pros with decentralized systems. However, I personally see more pros than cons. My favorite initiatives are [Mastodon](https://joinmastodon.org), [Solid.mit.edu](https://solid.mit.edu) / [Inrupt](https://inrupt.com). Blockchain is foundation for it, but as you can see with Solid and Inrupt, not everything needs to be on a blockchain.
+  info: My favorite initiatives are [Mastodon](https://joinmastodon.org), [Solid.mit.edu](https://solid.mit.edu) / [Inrupt](https://inrupt.com). To me, Blockchain is one of the foundations for a robust decentralized system. However, as you can see with Solid and Inrupt, not everything needs to be on a blockchain.
 
 - term: Artificial Intelligence
-  info: AI is changing the world. We need to make sure that we create AIs in an ethical and open way so that everyone can benefit from the power that this technology can bring. There will be private AI entities, but like Linux, the foundation should be open to all.
+  info: AI is changing the world. We need to make sure that we create AIs in an ethical and open way so that everyone can benefit from the power that this technology can bring. Inevitably, there will be private AI solutions, but like Linux, the foundation of AI should be open to all.
 
 
 ### START --- SOME THOUGHTS FOR SOME BLOG POST LATER?

@@ -14,14 +14,18 @@ degrees:
   icon: fa-microscope
   institution:
     name: Long Term
-    description: Help turn Virtual Reality into platform that will change the world (i.e. business, gaming, health care, and education).  
+    description:
+    - paragraph: Help turn XR spectrum into platform that will change the world (i.e. business, gaming, health care, and education).
+    - paragraph: For the uninitiated, "X" in "XR" can be replaced with anything (i.e. AR, VR, MR, SR, LR).
 - name: what I hope to be doing next
   icon: fa-microscope
   institution:
     name: Medium Term
-    description: Position myself to help achieve long term mission. 
+    description: 
+      - paragraph: Position myself to help achieve my long term career mission. 
 - name: what am I focusing on now
   icon: fa-microscope
   institution:
     name: Short Term
-    description: Help Ubisoft release Assassin's Creed VR.
+    description:
+      - paragraph: Help Ubisoft release Assassin's Creed VR.

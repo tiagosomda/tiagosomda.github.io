@@ -1,6 +1,6 @@
 # section information
 section:
-  name: Projects
+  name: Featured Projects
   id: projects
   enable: true
   weight: 20
@@ -27,7 +27,7 @@ buttons:
 projects:
 - name: Windows
   # logo: /images/sections/projects/kubernetes.png
-  role: Contributor
+  role: Contributor as Software Engineer
   timeline: "March 2016 - October 2019"
   url: "https://www.microsoft.com"  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
   summary: Wrote some stuff probably running on all Windows based computers everyday. Create many internal tools and services used by many developers at Microsoft.
@@ -35,10 +35,10 @@ projects:
 
 - name: Test Base for M365
   # logo: /images/sections/projects/tensorflow.png
-  role: Contributor
+  role: Contributor as Software Engineer
   timeline: "October 2019 to October 2021"
   url: "https://www.microsoft.com/en-us/testbase"
-  summary: Helped prototype and then create this service which is now serving hundres of customers and helping increase the quality and securityu of many companies around the world.
+  summary: Helped prototype and then create this service which is now serving hundres of customers and helping increase the quality and security of many companies around the world.
   tags: ["professional", "microsoft", "cloud"]
 
 - name: StrikingThoughts.io
@@ -67,7 +67,7 @@ projects:
 
 - name: Assassin's Creed VR
   # logo: /images/sections/projects/tensorflow.png
-  role: Hobby VR Game
+  role: Contributor as Gameplay Engineer
   timeline: "October 2021 - Present"
   url: "https://www.redstorm.com/news-2"
   summary: I currently working on this game. That is all I can say.

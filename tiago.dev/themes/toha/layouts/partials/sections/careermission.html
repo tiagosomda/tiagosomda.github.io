@@ -42,7 +42,9 @@
                                 <div class="timeframe col-lg-2 col-md-4">{{ .timeframe }}</div>
                             </div>
                             <h6>{{ .name }}</h6>
-                            <p>{{.institution.description}}</p>
+                            {{ range .institution.description}}
+                                <p>{{ .paragraph | markdownify }}</p>                            
+                            {{ end }}
                             {{ if .grade }}
                                 <h6><span class="text-muted">{{ .grade.scale }}: </span><span>{{ .grade.achieved }}</span> {{ i18n "out_of"}} <span>{{ .grade.outOf }}</span></h6>
                             {{ end }}

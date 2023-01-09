@@ -17,6 +17,9 @@ other = "Categories"
 [at]
 other = "at"
 
+[on]
+other = "on"
+
 [resume]
 other = "My resume"
 

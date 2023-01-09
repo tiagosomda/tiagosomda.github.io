@@ -6,17 +6,19 @@ greeting: "Hi! I am Tiago"
 image: "images/author/tiago.png"
 # give your some contact information. they will be used in the footer
 contactInfo:
-  email: "tiago@somda.net"
-  github: tiagosomda
-  linkedin: tiagosomda
   mastodon: arvr.social/@TiagoSomda
+  linkedin: tiagosomda
+  github: tiagosomda
+  email: "tiago@somda.net"
 
 # some summary about what you do
 summary:
-  - Explorer
-  - Maker
-  - Traveler
-  - believer that XR can and is changing the world
+  - Software Engineer.
+  - Gameplay Engineer.
+  - XR Developer.
+  - Explorer.
+  - Maker.
+  - Traveler.
 
   # summary:
   # - and I believe XR can change the world! ...
