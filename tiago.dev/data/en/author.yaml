@@ -2,7 +2,7 @@
 name: "Tiago Sommer Damasceno"
 nickname: "Tiago"
 # greeting message before your name. it will default to "Hi! I am" if not provided
-greeting: "Sup MAGFest?!"
+greeting: "Hi! I am Tiago"
 image: "images/author/tiago.png"
 # give your some contact information. they will be used in the footer
 contactInfo:
@@ -12,13 +12,11 @@ contactInfo:
 
 # some summary about what you do
 summary:
-  - Want some free stickers?
-  - If you can find me, I will give you one!
-  - I am most likely wearing a VR headset...
-  - ... while wearing some Avatar The Last Air Bender gear
-  - I am also volunteering at the VR Zone area (and a couple of others)
-  - see yah then!
-
+  - Explorer
+  - Maker
+  - Traveler
+  - believer that XR can and is changing the world
+  
   # summary:
   # - and I believe XR can change the world! ...
   # - cue the Avatar theme song!
