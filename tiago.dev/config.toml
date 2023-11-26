@@ -1,17 +1,17 @@
 publishDir = "../docs"
 
 # Site settings
-baseURL = "//"
+baseURL = ""
 languageCode = "en-US"
 title = "tiago.dev"
 theme = "hugo-split-theme"
 disableKinds = ["section", "taxonomy", "taxonomyTerm", "RSS", "sitemap"]
 
 # Enter your tracking code to enable Google Analytics
-googleAnalytics = ""
+googleAnalytics = "//"
 
 # Copyright
-copyright = "&copy;2020 @ tiago.dev"
+copyright = "tiago.dev"
 
 [params.custom.css]
   enable = true
@@ -51,29 +51,33 @@ copyright = "&copy;2020 @ tiago.dev"
       heading = "Connect"
 
       [[params.links.list1.link]]
-        text = "1. Blog"
+        text = "Notes : where I blog"
         url = "https://notes.tiago.dev"
 
       [[params.links.list1.link]]
-        text = "2. LinkedIn"
+        text = "LinkedIn : professional stuff"
         url = "https://www.linkedin.com/in/tiagosomda/"
 
       [[params.links.list1.link]]
-        text = "3. Need Career Planning?"
+        text = "Want to chat about career planning?"
         url = "https://calendly.com/tiagosomda/career-mentorship"
 
   # Links List #2
   [[params.links]]
     [params.links.list2]
-      heading = "Game Stuff"
+      heading = "Made by me"
 
       [[params.links.list2.link]]
-        text = "1. Camp Fireworks"
+        text = "Camp Fireworks : VR game"
         url = "https://sidequestvr.com/app/1287/camp-fireworks"
 
       [[params.links.list2.link]]      
-        text = "2. Striking Thoughts"
-        url = "http://www.strikingthoughts.io/"  
+        text = "Striking Thoughts : creative outlet"
+        url = "http://www.strikingthoughts.io/"
+
+      [[params.links.list2.link]]      
+        text = "Gists : some useful scripts"
+        url = "https://gist.github.com/tiagosomda" 
 
   # The original template is released under the Creative Commons Attribution 3.0 License.
   # Please keep the original attribution link when using for your own project.
