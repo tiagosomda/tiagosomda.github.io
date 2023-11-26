@@ -22,6 +22,10 @@
     color: orange;
 }
 
+.split-lists .split-list {
+    width: 45%;
+}
+
 .split-bio h1,
 .split-bio h2,
 .accent
