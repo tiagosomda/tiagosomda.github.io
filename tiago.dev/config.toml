@@ -8,7 +8,7 @@ theme = "hugo-split-theme"
 disableKinds = ["section", "taxonomy", "taxonomyTerm", "RSS", "sitemap"]
 
 # Enter your tracking code to enable Google Analytics
-googleAnalytics = "//"
+#.Site.Config.Services.GoogleAnalytics.ID = "//"
 
 # Copyright
 copyright = "tiago.dev"
@@ -51,32 +51,32 @@ copyright = "tiago.dev"
       heading = "Connect"
 
       [[params.links.list1.link]]
-        text = "Notes : where I blog"
+        text = "Blog"
         url = "https://notes.tiago.dev"
 
       [[params.links.list1.link]]
-        text = "LinkedIn : professional stuff"
+        text = "LinkedIn"
         url = "https://www.linkedin.com/in/tiagosomda/"
 
       [[params.links.list1.link]]
-        text = "Want to chat about career planning?"
+        text = "Chat?"
         url = "https://calendly.com/tiagosomda/career-mentorship"
 
   # Links List #2
   [[params.links]]
     [params.links.list2]
-      heading = "Made by me"
+      heading = "Other Sites"
+
+      [[params.links.list2.link]]      
+        text = "StrikingThoughts.io"
+        url = "https://www.strikingthoughts.io/"
+
+      [[params.links.list2.link]]      
+        text = "Pretty.Games"
+        url = "https://www.pretty.games/"
 
       [[params.links.list2.link]]
-        text = "Camp Fireworks : VR game"
-        url = "https://sidequestvr.com/app/1287/camp-fireworks"
-
-      [[params.links.list2.link]]      
-        text = "Striking Thoughts : creative outlet"
-        url = "http://www.strikingthoughts.io/"
-
-      [[params.links.list2.link]]      
-        text = "Gists : some useful scripts"
+        text = "Github Gists"
         url = "https://gist.github.com/tiagosomda" 
 
   # The original template is released under the Creative Commons Attribution 3.0 License.
