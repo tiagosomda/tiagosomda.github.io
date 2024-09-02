@@ -68,11 +68,11 @@ copyright = "tiago.dev"
       heading = "Other Sites"
 
       [[params.links.list2.link]]      
-        text = "StrikingThoughts.io"
+        text = "GameDev Portfolio"
         url = "https://www.strikingthoughts.io/"
 
       [[params.links.list2.link]]      
-        text = "Pretty.Games"
+        text = "Making Games with my Wife"
         url = "https://www.pretty.games/"
 
       [[params.links.list2.link]]
