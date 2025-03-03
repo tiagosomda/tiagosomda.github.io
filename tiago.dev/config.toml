@@ -60,7 +60,7 @@ copyright = "tiago.dev"
 
       [[params.links.list1.link]]
         text = "Chat?"
-        url = "https://calendly.com/tiagosomda/career-mentorship"
+        url = "https://calendly.com/tiagosomda/chat"
 
   # Links List #2
   [[params.links]]
