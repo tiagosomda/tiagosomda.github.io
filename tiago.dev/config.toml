@@ -1,10 +1,10 @@
 publishDir = "../docs"
 
 # Site settings
-baseURL = ""
+baseURL = "www.tiago.dev"
 languageCode = "en-US"
 title = "tiago.dev"
-theme = "hugo-split-theme"
+theme = "hugo-split"
 disableKinds = ["section", "taxonomy", "taxonomyTerm", "RSS", "sitemap"]
 
 # Enter your tracking code to enable Google Analytics
