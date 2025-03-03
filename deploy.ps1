@@ -7,8 +7,8 @@ rmdir -Force .\docs
 mkdir docs
 
 # build / generate static website
-cd .\tiago.dev
-hugo -t hugo-split-theme
+cd .\src
+hugo -t hugo-split
 cd ..
 copy CNAME .\docs\CNAME 
 rm -Force CNAME
