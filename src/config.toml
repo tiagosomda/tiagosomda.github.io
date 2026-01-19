@@ -59,20 +59,21 @@ copyright = "tiago.dev"
         url = "https://www.linkedin.com/in/tiagosomda/"
 
       [[params.links.list1.link]]
-        text = "Chat?"
-        url = "https://calendly.com/tiagosomda/chat"
+        text = "Bluesky"
+        url = "https://bsky.app/profile/tiago.dev"
+
 
   # Links List #2
   [[params.links]]
     [params.links.list2]
       heading = "Other Sites"
 
-      [[params.links.list2.link]]      
-        text = "GameDev Portfolio"
+      [[params.links.list2.link]]
+        text = "Creative Outlet"
         url = "https://www.strikingthoughts.io/"
 
-      [[params.links.list2.link]]      
-        text = "Making Games with my Wife"
+      [[params.links.list2.link]]
+        text = "Pretty Games"
         url = "https://www.pretty.games/"
 
       [[params.links.list2.link]]
