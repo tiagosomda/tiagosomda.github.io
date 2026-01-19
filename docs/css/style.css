@@ -3,6 +3,11 @@
     color: white;
 }
 
+.split-bio {
+    font-size: 18px;
+    line-height: 28px;
+}
+
 .split-intro > h1 {
     color: orange;
     font-size: 18px;
