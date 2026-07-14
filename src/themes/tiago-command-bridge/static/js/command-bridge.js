@@ -16,27 +16,38 @@
     document.body.classList.add("intro-active");
     let complete = false;
     let releaseTimer;
+    let skipFallbackTimer;
+    let focusShipIdAfterSkip = false;
 
-    const finish = (skipped = false) => {
+    const finish = () => {
       if (complete) return;
       complete = true;
       window.clearTimeout(releaseTimer);
-      intro.classList.add(skipped ? "is-skipped" : "is-complete");
+      window.clearTimeout(skipFallbackTimer);
+      intro.classList.add("is-complete");
       document.body.classList.remove("intro-active");
-
-      const activeWasSkip = document.activeElement === skip;
-      window.setTimeout(() => {
-        intro.hidden = true;
-        if (activeWasSkip) document.querySelector(".ship-id")?.focus({ preventScroll: true });
-      }, skipped ? 280 : 0);
+      intro.hidden = true;
+      if (focusShipIdAfterSkip) document.querySelector(".ship-id")?.focus({ preventScroll: true });
     };
 
-    skip.addEventListener("click", () => finish(true));
+    const skipToDoors = () => {
+      if (complete || intro.classList.contains("is-skipping")) return;
+      window.clearTimeout(releaseTimer);
+      focusShipIdAfterSkip = document.activeElement === skip;
+      skip.disabled = true;
+      intro.classList.add("is-skipping");
+      skipFallbackTimer = window.setTimeout(finish, 1500);
+    };
+
+    intro.addEventListener("animationend", (event) => {
+      if (event.target === intro && event.animationName === "intro-skip-release") finish();
+    });
+    skip.addEventListener("click", skipToDoors);
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") finish(true);
+      if (event.key === "Escape") skipToDoors();
     });
 
-    releaseTimer = window.setTimeout(() => finish(false), 6800);
+    releaseTimer = window.setTimeout(finish, 6800);
   };
 
   const updateClock = () => {
