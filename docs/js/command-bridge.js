@@ -27,6 +27,7 @@
       intro.classList.add("is-complete");
       document.body.classList.remove("intro-active");
       intro.hidden = true;
+      document.dispatchEvent(new Event("ship-intro-complete"));
       if (focusShipIdAfterSkip) document.querySelector(".ship-id")?.focus({ preventScroll: true });
     };
 
@@ -262,6 +263,364 @@
     }
   };
 
+  const initStayingSpeedGraphs = () => {
+    const figures = Array.from(document.querySelectorAll("[data-staying-speed-graph]"));
+    if (!figures.length) return;
+
+    const rootStyles = window.getComputedStyle(document.documentElement);
+    const color = (name) => rootStyles.getPropertyValue(name).trim();
+    const palette = {
+      cyan: color("--cyan"),
+      orange: color("--orange-hi"),
+      red: color("--red"),
+      muted: color("--muted"),
+      line: color("--line-bright"),
+      mono: color("--font-mono") || "monospace",
+    };
+    const parseHexColor = (value) => {
+      const match = value.match(/^#([\da-f]{2})([\da-f]{2})([\da-f]{2})$/i);
+      return match ? match.slice(1).map((channel) => Number.parseInt(channel, 16)) : null;
+    };
+    const warningStart = parseHexColor(palette.orange);
+    const warningEnd = parseHexColor(palette.red);
+    const warningColor = (intensity) => {
+      if (!warningStart || !warningEnd) return intensity > 0.5 ? palette.red : palette.orange;
+      const amount = Math.min(1, Math.max(0, intensity));
+      const channels = warningStart.map((channel, index) => Math.round(channel + ((warningEnd[index] - channel) * amount)));
+      return `rgb(${channels.join(", ")})`;
+    };
+
+    figures.forEach((figure) => {
+      const canvas = figure.querySelector("canvas");
+      const context = canvas?.getContext("2d");
+      if (!canvas || !context) return;
+
+      let width = 0;
+      let height = 0;
+      let progress = reducedMotion ? 1 : 0;
+      let animationFrame = 0;
+      let animationStart = 0;
+      let started = false;
+
+      const centerAt = (time) => (
+        0.5
+        + (Math.sin((time * Math.PI * 1.7) + 0.35) * 0.042)
+        + (Math.sin((time * Math.PI * 4.8) + 1.1) * 0.017)
+      );
+      const bandAt = (time) => {
+        const center = centerAt(time);
+        const firstPeakTime = 1 / 4.5;
+        const firstPeakDistance = (time - firstPeakTime) / 0.09;
+        const firstPeakWidening = Math.exp(-(firstPeakDistance * firstPeakDistance));
+        const upperRadius = (
+          0.078
+          + ((0.5 + (Math.sin((time * Math.PI * 2.7) + 0.7) * 0.5)) * 0.02)
+          + ((0.5 + (Math.sin(time * Math.PI * 6.2) * 0.5)) * 0.008)
+          + (firstPeakWidening * 0.08)
+        );
+        const lowerRadius = (
+          0.084
+          + ((0.5 + (Math.cos((time * Math.PI * 2.2) + 0.35) * 0.5)) * 0.026)
+          + ((0.5 + (Math.sin((time * Math.PI * 4.8) + 1.2) * 0.5)) * 0.01)
+          + (firstPeakWidening * 0.048)
+        );
+        return {
+          center,
+          upper: center - upperRadius,
+          lower: center + lowerRadius,
+        };
+      };
+      const effortAt = (time) => {
+        const correction = 0.36 * Math.exp(-2.25 * time) * Math.cos(4.5 * Math.PI * time);
+        return Math.min(0.94, Math.max(0.06, centerAt(time) + correction));
+      };
+
+      const drawBlochMarker = (x, y, markerColor, phase) => {
+        const ctx = context;
+        const radius = Math.max(7, Math.min(9, width / 64));
+        const axisAngle = phase * 0.18;
+        const axisX = Math.cos(axisAngle) * radius * 0.78;
+        const axisY = Math.sin(axisAngle) * radius * 0.78;
+        const vectorX = Math.cos(phase) * radius * 0.66;
+        const vectorY = Math.sin(phase * 0.77) * radius * 0.66;
+
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.strokeStyle = markerColor;
+        ctx.fillStyle = markerColor;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = markerColor;
+
+        ctx.globalAlpha = 0.14;
+        ctx.beginPath();
+        ctx.arc(0, 0, radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.globalAlpha = 0.38;
+        ctx.lineWidth = 0.8;
+        ctx.beginPath();
+        ctx.ellipse(0, 0, radius * 0.98, radius * 0.31, phase * 0.36, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.ellipse(0, 0, radius * 0.31, radius * 0.98, phase * -0.23, 0, Math.PI * 2);
+        ctx.stroke();
+
+        ctx.globalAlpha = 0.52;
+        ctx.beginPath();
+        ctx.moveTo(-axisX, -axisY);
+        ctx.lineTo(axisX, axisY);
+        ctx.stroke();
+
+        ctx.globalAlpha = 1;
+        ctx.lineWidth = 1.2;
+        ctx.beginPath();
+        ctx.arc(0, 0, radius, 0, Math.PI * 2);
+        ctx.stroke();
+
+        ctx.lineWidth = 1.1;
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(vectorX, vectorY);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(vectorX, vectorY, 1.55, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(0, 0, 0.9, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+
+        return radius;
+      };
+
+      const draw = () => {
+        if (!width || !height) return;
+
+        const ctx = context;
+        const plot = { left: 10, right: width - 10, top: 9, bottom: height - 9 };
+        const plotWidth = plot.right - plot.left;
+        const plotHeight = plot.bottom - plot.top;
+        const xAt = (time) => plot.left + (time * plotWidth);
+        const yAt = (effort) => plot.top + (effort * plotHeight);
+        const samples = Math.max(48, Math.round(plotWidth / 6));
+
+        ctx.clearRect(0, 0, width, height);
+
+        ctx.save();
+        ctx.strokeStyle = palette.line;
+        ctx.globalAlpha = 0.16;
+        ctx.lineWidth = 1;
+        for (let index = 0; index <= 5; index += 1) {
+          const x = plot.left + ((plotWidth / 5) * index);
+          ctx.beginPath();
+          ctx.moveTo(x, plot.top);
+          ctx.lineTo(x, plot.bottom);
+          ctx.stroke();
+        }
+        for (let index = 0; index <= 4; index += 1) {
+          const y = plot.top + ((plotHeight / 4) * index);
+          ctx.beginPath();
+          ctx.moveTo(plot.left, y);
+          ctx.lineTo(plot.right, y);
+          ctx.stroke();
+        }
+        ctx.restore();
+
+        ctx.save();
+        ctx.fillStyle = palette.cyan;
+        ctx.globalAlpha = 0.075;
+        ctx.beginPath();
+        for (let index = 0; index <= samples; index += 1) {
+          const time = index / samples;
+          const y = yAt(bandAt(time).upper);
+          if (index === 0) ctx.moveTo(xAt(time), y);
+          else ctx.lineTo(xAt(time), y);
+        }
+        for (let index = samples; index >= 0; index -= 1) {
+          const time = index / samples;
+          ctx.lineTo(xAt(time), yAt(bandAt(time).lower));
+        }
+        ctx.closePath();
+        ctx.fill();
+        ctx.restore();
+
+        ["upper", "lower"].forEach((boundary) => {
+          ctx.save();
+          ctx.strokeStyle = palette.cyan;
+          ctx.globalAlpha = 0.34;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          for (let index = 0; index <= samples; index += 1) {
+            const time = index / samples;
+            const x = xAt(time);
+            const y = yAt(bandAt(time)[boundary]);
+            if (index === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+          }
+          ctx.stroke();
+          ctx.restore();
+        });
+
+        ctx.save();
+        ctx.strokeStyle = palette.orange;
+        ctx.globalAlpha = 0.35;
+        ctx.lineWidth = 1;
+        ctx.setLineDash([3, 5]);
+        ctx.beginPath();
+        for (let index = 0; index <= samples; index += 1) {
+          const time = index / samples;
+          const x = xAt(time);
+          const y = yAt(centerAt(time));
+          if (index === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+        ctx.restore();
+
+        const visibleSamples = Math.max(1, Math.round(samples * progress));
+        const stableColorTime = 3 / 4.5;
+        const signalGradient = ctx.createLinearGradient(plot.left, 0, plot.right, 0);
+        signalGradient.addColorStop(0, palette.orange);
+        signalGradient.addColorStop(stableColorTime - 0.12, palette.orange);
+        signalGradient.addColorStop(stableColorTime, palette.cyan);
+        signalGradient.addColorStop(1, palette.cyan);
+
+        const isStableAt = (time) => {
+          const effort = effortAt(time);
+          const band = bandAt(time);
+          return effort >= band.upper && effort <= band.lower;
+        };
+        const warningIntensityAt = (time) => {
+          const effort = effortAt(time);
+          const band = bandAt(time);
+          const localAmplitude = 0.36 * Math.exp(-2.25 * time);
+          if (effort < band.upper) {
+            const peak = band.center - localAmplitude;
+            return (band.upper - effort) / Math.max(0.0001, band.upper - peak);
+          }
+          if (effort > band.lower) {
+            const peak = band.center + localAmplitude;
+            return (effort - band.lower) / Math.max(0.0001, peak - band.lower);
+          }
+          return 0;
+        };
+        ctx.save();
+        ctx.lineWidth = 1.8;
+        ctx.shadowBlur = 7;
+        for (let index = 1; index <= visibleSamples; index += 1) {
+          const startTime = ((index - 1) / visibleSamples) * progress;
+          const endTime = (index / visibleSamples) * progress;
+          const sampleTime = (startTime + endTime) / 2;
+          const stable = isStableAt(sampleTime);
+          const segmentColor = stable ? signalGradient : warningColor(warningIntensityAt(sampleTime));
+          ctx.strokeStyle = segmentColor;
+          ctx.shadowColor = stable ? palette.orange : segmentColor;
+          ctx.beginPath();
+          ctx.moveTo(xAt(startTime), yAt(effortAt(startTime)));
+          ctx.lineTo(xAt(endTime), yAt(effortAt(endTime)));
+          ctx.stroke();
+        }
+        ctx.restore();
+
+        const markerX = xAt(progress);
+        const markerY = yAt(effortAt(progress));
+        const markerStable = isStableAt(progress);
+        const markerColor = markerStable ? (progress >= stableColorTime ? palette.cyan : palette.orange) : warningColor(warningIntensityAt(progress));
+        const markerPhase = (progress * Math.PI * 6) + (Math.PI * 0.18);
+        const markerRadius = drawBlochMarker(markerX, markerY, markerColor, markerPhase);
+
+        const labelSize = Math.max(6, Math.min(8, width / 72));
+        ctx.save();
+        ctx.fillStyle = palette.red;
+        ctx.globalAlpha = 0.72;
+        ctx.font = `${labelSize}px ${palette.mono}`;
+        ctx.textAlign = "right";
+        ctx.fillText("OVEREXTENSION", plot.right - 4, plot.top + labelSize + 2);
+        ctx.fillText("UNDERLOAD", plot.right - 4, plot.bottom - 4);
+        ctx.restore();
+
+        if (progress < stableColorTime) {
+          ctx.save();
+          ctx.fillStyle = markerColor;
+          ctx.font = `${labelSize + 1}px ${palette.mono}`;
+          ctx.textAlign = markerX > plot.right - 42 ? "right" : "left";
+          const markerLabelX = markerX > plot.right - 42 ? markerX - markerRadius - 3 : markerX + markerRadius + 3;
+          ctx.fillText("Eᵣ", markerLabelX, markerY - markerRadius - 2);
+          ctx.restore();
+        }
+
+        if (progress >= stableColorTime) {
+          const arrival = Math.min(1, (progress - stableColorTime) / 0.14);
+          ctx.save();
+          ctx.fillStyle = palette.cyan;
+          ctx.globalAlpha = arrival;
+          ctx.font = `${labelSize + 2}px ${palette.mono}`;
+          ctx.textAlign = "right";
+          ctx.fillText("vₛ // STABLE", plot.right - 4, yAt(centerAt(0.96)) - markerRadius - 5);
+          ctx.restore();
+        }
+      };
+
+      const resize = () => {
+        const bounds = canvas.getBoundingClientRect();
+        const nextWidth = Math.max(1, Math.round(bounds.width));
+        const nextHeight = Math.max(1, Math.round(bounds.height));
+        const density = Math.min(window.devicePixelRatio || 1, 2);
+        if (nextWidth === width && nextHeight === height) return;
+        width = nextWidth;
+        height = nextHeight;
+        canvas.width = Math.round(width * density);
+        canvas.height = Math.round(height * density);
+        context.setTransform(density, 0, 0, density, 0, 0);
+        draw();
+      };
+
+      const animate = (timestamp) => {
+        if (!animationStart) animationStart = timestamp;
+        progress = Math.min(1, (timestamp - animationStart) / 6200);
+        draw();
+        if (progress < 1) animationFrame = window.requestAnimationFrame(animate);
+      };
+
+      const start = () => {
+        if (started) return;
+        started = true;
+        if (reducedMotion) {
+          progress = 1;
+          draw();
+          return;
+        }
+        animationFrame = window.requestAnimationFrame(animate);
+      };
+
+      const startAfterIntro = () => {
+        if (document.body.classList.contains("intro-active")) {
+          document.addEventListener("ship-intro-complete", start, { once: true });
+        } else {
+          start();
+        }
+      };
+
+      resize();
+      if ("ResizeObserver" in window) {
+        new ResizeObserver(resize).observe(canvas);
+      } else {
+        window.addEventListener("resize", resize, { passive: true });
+      }
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+          if (!entries.some((entry) => entry.isIntersecting)) return;
+          observer.disconnect();
+          startAfterIntro();
+        }, { threshold: 0.25 });
+        observer.observe(figure);
+      } else {
+        startAfterIntro();
+      }
+    });
+  };
+
   const startStarfield = () => {
     const canvas = document.querySelector("#starfield");
     const context = canvas?.getContext("2d");
@@ -337,5 +696,6 @@
   revealPanels();
   setupMobileNavigation();
   loadCaptainLogs();
+  initStayingSpeedGraphs();
   startStarfield();
 })();

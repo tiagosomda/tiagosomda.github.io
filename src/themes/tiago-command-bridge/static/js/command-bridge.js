@@ -302,10 +302,95 @@
       let animationStart = 0;
       let started = false;
 
-      const centerAt = (time) => 0.5 - (Math.sin(time * Math.PI * 1.2) * 0.025);
+      const centerAt = (time) => (
+        0.5
+        + (Math.sin((time * Math.PI * 1.7) + 0.35) * 0.042)
+        + (Math.sin((time * Math.PI * 4.8) + 1.1) * 0.017)
+      );
+      const bandAt = (time) => {
+        const center = centerAt(time);
+        const firstPeakTime = 1 / 4.5;
+        const firstPeakDistance = (time - firstPeakTime) / 0.09;
+        const firstPeakWidening = Math.exp(-(firstPeakDistance * firstPeakDistance));
+        const upperRadius = (
+          0.078
+          + ((0.5 + (Math.sin((time * Math.PI * 2.7) + 0.7) * 0.5)) * 0.02)
+          + ((0.5 + (Math.sin(time * Math.PI * 6.2) * 0.5)) * 0.008)
+          + (firstPeakWidening * 0.08)
+        );
+        const lowerRadius = (
+          0.084
+          + ((0.5 + (Math.cos((time * Math.PI * 2.2) + 0.35) * 0.5)) * 0.026)
+          + ((0.5 + (Math.sin((time * Math.PI * 4.8) + 1.2) * 0.5)) * 0.01)
+          + (firstPeakWidening * 0.048)
+        );
+        return {
+          center,
+          upper: center - upperRadius,
+          lower: center + lowerRadius,
+        };
+      };
       const effortAt = (time) => {
         const correction = 0.36 * Math.exp(-2.25 * time) * Math.cos(4.5 * Math.PI * time);
         return Math.min(0.94, Math.max(0.06, centerAt(time) + correction));
+      };
+
+      const drawBlochMarker = (x, y, markerColor, phase) => {
+        const ctx = context;
+        const radius = Math.max(7, Math.min(9, width / 64));
+        const axisAngle = phase * 0.18;
+        const axisX = Math.cos(axisAngle) * radius * 0.78;
+        const axisY = Math.sin(axisAngle) * radius * 0.78;
+        const vectorX = Math.cos(phase) * radius * 0.66;
+        const vectorY = Math.sin(phase * 0.77) * radius * 0.66;
+
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.strokeStyle = markerColor;
+        ctx.fillStyle = markerColor;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = markerColor;
+
+        ctx.globalAlpha = 0.14;
+        ctx.beginPath();
+        ctx.arc(0, 0, radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.globalAlpha = 0.38;
+        ctx.lineWidth = 0.8;
+        ctx.beginPath();
+        ctx.ellipse(0, 0, radius * 0.98, radius * 0.31, phase * 0.36, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.ellipse(0, 0, radius * 0.31, radius * 0.98, phase * -0.23, 0, Math.PI * 2);
+        ctx.stroke();
+
+        ctx.globalAlpha = 0.52;
+        ctx.beginPath();
+        ctx.moveTo(-axisX, -axisY);
+        ctx.lineTo(axisX, axisY);
+        ctx.stroke();
+
+        ctx.globalAlpha = 1;
+        ctx.lineWidth = 1.2;
+        ctx.beginPath();
+        ctx.arc(0, 0, radius, 0, Math.PI * 2);
+        ctx.stroke();
+
+        ctx.lineWidth = 1.1;
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(vectorX, vectorY);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(vectorX, vectorY, 1.55, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(0, 0, 0.9, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+
+        return radius;
       };
 
       const draw = () => {
@@ -347,19 +432,19 @@
         ctx.beginPath();
         for (let index = 0; index <= samples; index += 1) {
           const time = index / samples;
-          const y = yAt(centerAt(time) - 0.105);
+          const y = yAt(bandAt(time).upper);
           if (index === 0) ctx.moveTo(xAt(time), y);
           else ctx.lineTo(xAt(time), y);
         }
         for (let index = samples; index >= 0; index -= 1) {
           const time = index / samples;
-          ctx.lineTo(xAt(time), yAt(centerAt(time) + 0.105));
+          ctx.lineTo(xAt(time), yAt(bandAt(time).lower));
         }
         ctx.closePath();
         ctx.fill();
         ctx.restore();
 
-        [-0.105, 0.105].forEach((offset) => {
+        ["upper", "lower"].forEach((boundary) => {
           ctx.save();
           ctx.strokeStyle = palette.cyan;
           ctx.globalAlpha = 0.34;
@@ -368,7 +453,7 @@
           for (let index = 0; index <= samples; index += 1) {
             const time = index / samples;
             const x = xAt(time);
-            const y = yAt(centerAt(time) + offset);
+            const y = yAt(bandAt(time)[boundary]);
             if (index === 0) ctx.moveTo(x, y);
             else ctx.lineTo(x, y);
           }
@@ -393,18 +478,31 @@
         ctx.restore();
 
         const visibleSamples = Math.max(1, Math.round(samples * progress));
+        const stableColorTime = 3 / 4.5;
         const signalGradient = ctx.createLinearGradient(plot.left, 0, plot.right, 0);
         signalGradient.addColorStop(0, palette.orange);
-        signalGradient.addColorStop(0.72, palette.orange);
+        signalGradient.addColorStop(stableColorTime - 0.12, palette.orange);
+        signalGradient.addColorStop(stableColorTime, palette.cyan);
         signalGradient.addColorStop(1, palette.cyan);
 
-        const bandRadius = 0.105;
-        const isStableAt = (time) => Math.abs(effortAt(time) - centerAt(time)) <= bandRadius;
+        const isStableAt = (time) => {
+          const effort = effortAt(time);
+          const band = bandAt(time);
+          return effort >= band.upper && effort <= band.lower;
+        };
         const warningIntensityAt = (time) => {
-          const deviation = Math.abs(effortAt(time) - centerAt(time));
+          const effort = effortAt(time);
+          const band = bandAt(time);
           const localAmplitude = 0.36 * Math.exp(-2.25 * time);
-          if (deviation <= bandRadius) return 0;
-          return (deviation - bandRadius) / Math.max(0.0001, localAmplitude - bandRadius);
+          if (effort < band.upper) {
+            const peak = band.center - localAmplitude;
+            return (band.upper - effort) / Math.max(0.0001, band.upper - peak);
+          }
+          if (effort > band.lower) {
+            const peak = band.center + localAmplitude;
+            return (effort - band.lower) / Math.max(0.0001, peak - band.lower);
+          }
+          return 0;
         };
         ctx.save();
         ctx.lineWidth = 1.8;
@@ -427,18 +525,9 @@
         const markerX = xAt(progress);
         const markerY = yAt(effortAt(progress));
         const markerStable = isStableAt(progress);
-        const markerColor = markerStable ? (progress > 0.84 ? palette.cyan : palette.orange) : warningColor(warningIntensityAt(progress));
-        ctx.save();
-        ctx.strokeStyle = markerStable ? palette.cyan : markerColor;
-        ctx.fillStyle = markerColor;
-        ctx.lineWidth = 1;
-        ctx.shadowBlur = 11;
-        ctx.shadowColor = markerColor;
-        ctx.beginPath();
-        ctx.arc(markerX, markerY, 4.5, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.stroke();
-        ctx.restore();
+        const markerColor = markerStable ? (progress >= stableColorTime ? palette.cyan : palette.orange) : warningColor(warningIntensityAt(progress));
+        const markerPhase = (progress * Math.PI * 6) + (Math.PI * 0.18);
+        const markerRadius = drawBlochMarker(markerX, markerY, markerColor, markerPhase);
 
         const labelSize = Math.max(6, Math.min(8, width / 72));
         ctx.save();
@@ -450,22 +539,24 @@
         ctx.fillText("UNDERLOAD", plot.right - 4, plot.bottom - 4);
         ctx.restore();
 
-        ctx.save();
-        ctx.fillStyle = markerColor;
-        ctx.font = `${labelSize + 1}px ${palette.mono}`;
-        ctx.textAlign = markerX > plot.right - 42 ? "right" : "left";
-        const markerLabelX = markerX > plot.right - 42 ? markerX - 8 : markerX + 8;
-        ctx.fillText("Eᵣ", markerLabelX, markerY - 7);
-        ctx.restore();
+        if (progress < stableColorTime) {
+          ctx.save();
+          ctx.fillStyle = markerColor;
+          ctx.font = `${labelSize + 1}px ${palette.mono}`;
+          ctx.textAlign = markerX > plot.right - 42 ? "right" : "left";
+          const markerLabelX = markerX > plot.right - 42 ? markerX - markerRadius - 3 : markerX + markerRadius + 3;
+          ctx.fillText("Eᵣ", markerLabelX, markerY - markerRadius - 2);
+          ctx.restore();
+        }
 
-        if (progress > 0.84) {
-          const arrival = Math.min(1, (progress - 0.84) / 0.16);
+        if (progress >= stableColorTime) {
+          const arrival = Math.min(1, (progress - stableColorTime) / 0.14);
           ctx.save();
           ctx.fillStyle = palette.cyan;
           ctx.globalAlpha = arrival;
           ctx.font = `${labelSize + 2}px ${palette.mono}`;
           ctx.textAlign = "right";
-          ctx.fillText("vₛ // STABLE", plot.right - 4, yAt(centerAt(0.96)) - 9);
+          ctx.fillText("vₛ // STABLE", plot.right - 4, yAt(centerAt(0.96)) - markerRadius - 5);
           ctx.restore();
         }
       };
