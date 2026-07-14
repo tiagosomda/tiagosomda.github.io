@@ -3,6 +3,42 @@
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  const setupShipIntro = () => {
+    const intro = document.querySelector("[data-ship-intro]");
+    const skip = intro?.querySelector("[data-intro-skip]");
+    if (!intro || !skip) return;
+
+    if (reducedMotion) {
+      intro.hidden = true;
+      return;
+    }
+
+    document.body.classList.add("intro-active");
+    let complete = false;
+    let releaseTimer;
+
+    const finish = (skipped = false) => {
+      if (complete) return;
+      complete = true;
+      window.clearTimeout(releaseTimer);
+      intro.classList.add(skipped ? "is-skipped" : "is-complete");
+      document.body.classList.remove("intro-active");
+
+      const activeWasSkip = document.activeElement === skip;
+      window.setTimeout(() => {
+        intro.hidden = true;
+        if (activeWasSkip) document.querySelector(".ship-id")?.focus({ preventScroll: true });
+      }, skipped ? 280 : 0);
+    };
+
+    skip.addEventListener("click", () => finish(true));
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") finish(true);
+    });
+
+    releaseTimer = window.setTimeout(() => finish(false), 6800);
+  };
+
   const updateClock = () => {
     const clock = document.querySelector("[data-clock]");
     if (!clock) return;
@@ -60,12 +96,14 @@
   const setupMobileNavigation = () => {
     const navigator = document.querySelector("[data-mobile-nav]");
     const trigger = navigator?.querySelector("[data-mobile-nav-trigger]");
-    const panel = navigator?.querySelector("[data-mobile-nav-panel]");
+    const panel = document.querySelector("[data-mobile-nav-panel]");
     const currentCode = navigator?.querySelector("[data-mobile-nav-code]");
     const currentLabel = navigator?.querySelector("[data-mobile-nav-label]");
     const progress = navigator?.querySelector("[data-mobile-nav-progress]");
-    const scrim = navigator?.querySelector("[data-mobile-nav-scrim]");
-    const closeButton = navigator?.querySelector("[data-mobile-nav-close]");
+    const scrim = document.querySelector("[data-mobile-nav-scrim]");
+    const closeButton = panel?.querySelector("[data-mobile-nav-close]");
+    const header = document.querySelector(".bridge-header");
+    const bridge = document.querySelector(".hero");
     const links = Array.from(panel?.querySelectorAll("a[href^='#']") || []);
     if (!navigator || !trigger || !panel || !currentCode || !currentLabel || !progress || !scrim || !closeButton || !links.length) return;
 
@@ -85,7 +123,7 @@
     links.forEach((link) => link.addEventListener("click", () => setOpen(false)));
 
     document.addEventListener("click", (event) => {
-      if (!navigator.contains(event.target)) setOpen(false);
+      if (!navigator.contains(event.target) && !panel.contains(event.target)) setOpen(false);
     });
 
     document.addEventListener("keydown", (event) => {
@@ -96,7 +134,8 @@
 
     let queued = false;
     const update = () => {
-      const marker = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--header-height")) + window.innerHeight * 0.28;
+      const headerHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--header-height"));
+      const marker = headerHeight + window.innerHeight * 0.28;
       let active = links[0];
 
       links.forEach((link) => {
@@ -112,6 +151,7 @@
       currentCode.textContent = active.dataset.navCode;
       currentLabel.textContent = active.dataset.navLabel;
       trigger.setAttribute("aria-label", `Open deck navigation. Current section: ${active.dataset.navLabel.toLowerCase()}`);
+      header?.classList.toggle("is-beyond-bridge", Boolean(bridge && bridge.getBoundingClientRect().bottom <= headerHeight));
 
       const maximum = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
       progress.style.transform = `scaleX(${Math.min(1, Math.max(0, window.scrollY / maximum))})`;
@@ -280,6 +320,7 @@
     }, { passive: true });
   };
 
+  setupShipIntro();
   updateClock();
   updateCurrentSol();
   revealPanels();

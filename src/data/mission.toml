@@ -4,7 +4,7 @@ mission = "Building playful systems, immersive worlds, and useful experiments fr
 
 [captain]
 name = "Tiago Sommer Damasceno"
-role = "Gameplay Engineer"
+role = "Software and Gameplay Engineer"
 summary = "A passionate programmer with a foundation in software engineering and a habit of turning curious ideas into playable, useful things."
 current = "Founder of Pretty Games, an independent studio creating delightful experiences with a small, inventive crew."
 
@@ -48,6 +48,11 @@ detail = "Tools that augment creators and unlock more diverse, expressive player
 code = "P2P"
 name = "Decentralization"
 detail = "Empowering people through open social protocols, portable identity, and user-owned data."
+
+[[interests]]
+code = "QC"
+name = "Quantum Computing"
+detail = "Quantum algorithms, software stacks, and applications—especially quantum and post-quantum cryptography, with enough hardware context to understand what the abstractions are built on."
 
 [[links]]
 label = "Captain's Logs"

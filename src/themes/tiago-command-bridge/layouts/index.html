@@ -3,10 +3,36 @@
 {{ $birthDate := time.AsTime "1989-11-19T00:00:00Z" }}
 {{ $currentSol := div (sub now.Unix $birthDate.Unix) 86400 }}
 <div class="ship-frame">
+  <div class="ship-intro" data-ship-intro role="region" aria-label="TIAGO.DEV startup sequence">
+    <div class="intro-scan" aria-hidden="true"></div>
+    <div class="intro-console">
+      <p class="intro-eyebrow"><i></i> INBOUND VESSEL DETECTED</p>
+      <div class="intro-core" aria-hidden="true">
+        <span class="intro-core-ring intro-core-ring-a"></span>
+        <span class="intro-core-ring intro-core-ring-b"></span>
+        <span class="intro-core-ring intro-core-ring-c"></span>
+        <span class="intro-core-image"><img src="{{ "images/cognitive-core.jpg" | relURL }}" alt=""></span>
+        <i class="intro-core-sweep"></i>
+      </div>
+      <div class="intro-ident">
+        <span>PERSONAL EXPLORATION VESSEL</span>
+        <strong><span class="ship-name-tiago">TIAGO</span><span class="ship-name-dev">.DEV</span></strong>
+      </div>
+      <div class="intro-checks" aria-label="Startup checks">
+        <span><b>NAV ARRAY</b><em>LOCKED</em></span>
+        <span><b>COGNITIVE CORE</b><em>ONLINE</em></span>
+        <span><b>COMMS UPLINK</b><em>SYNCED</em></span>
+      </div>
+      <div class="intro-charge" aria-hidden="true"><i></i></div>
+      <p class="intro-ready"><i></i><span>INBOUND TRANSMISSION</span><i></i></p>
+    </div>
+    <button class="intro-skip" type="button" data-intro-skip>SKIP STARTUP <span aria-hidden="true">→</span></button>
+  </div>
+
   <header class="bridge-header" aria-label="Ship status">
     <a class="ship-id" href="#top" aria-label="TIAGO.DEV home">
       <span class="ship-mark" aria-hidden="true"><img src="{{ "images/cognitive-core.jpg" | relURL }}" alt=""></span>
-      <span><b>{{ $mission.ship }}</b><small>PERSONAL EXPLORATION VESSEL</small></span>
+      <span><b class="header-ship-name"><span class="ship-name-tiago">TIAGO</span><span class="ship-name-dev">.DEV</span></b><small>PERSONAL EXPLORATION VESSEL</small></span>
     </a>
     <div class="header-telemetry" aria-label="Current ship telemetry">
       <span><i class="status-dot"></i> ONLINE</span>
@@ -19,23 +45,24 @@
         <span><b data-mobile-nav-code>00</b><em data-mobile-nav-label>BRIDGE</em></span>
         <i aria-hidden="true"></i>
       </button>
-      <button class="mobile-nav-scrim" type="button" tabindex="-1" aria-label="Close deck navigation" data-mobile-nav-scrim></button>
-      <nav class="mobile-nav-panel" id="mobile-nav-panel" aria-label="Deck navigation" aria-hidden="true" data-mobile-nav-panel>
-        <div class="mobile-nav-heading">
-          <span><small>TIAGO.DEV</small><b>DECK MAP</b></span>
-          <button class="mobile-nav-close" type="button" aria-label="Close deck navigation" data-mobile-nav-close><i aria-hidden="true"></i></button>
-        </div>
-        <a href="#top" data-nav-code="00" data-nav-label="BRIDGE"><b>00</b><span>Bridge</span></a>
-        <a href="#captain" data-nav-code="01" data-nav-label="CAPTAIN"><b>01</b><span>Captain</span></a>
-        <a href="#record" data-nav-code="02" data-nav-label="RECORD"><b>02</b><span>Service Record</span></a>
-        <a href="#logs" data-nav-code="03" data-nav-label="LOGS"><b>03</b><span>Captain's Logs</span></a>
-        <a href="#research" data-nav-code="04" data-nav-label="INTERESTS"><b>04</b><span>Interests</span></a>
-        <a href="#comms" data-nav-code="05" data-nav-label="COMMS"><b>05</b><span>Comms</span></a>
-        <p class="mobile-nav-footer"><i class="status-dot"></i> NAVIGATION SYSTEM ONLINE</p>
-      </nav>
       <span class="mobile-nav-progress" aria-hidden="true"><i data-mobile-nav-progress></i></span>
     </div>
   </header>
+
+  <button class="mobile-nav-scrim" type="button" tabindex="-1" aria-label="Close deck navigation" data-mobile-nav-scrim></button>
+  <nav class="mobile-nav-panel" id="mobile-nav-panel" aria-label="Deck navigation" aria-hidden="true" data-mobile-nav-panel>
+    <div class="mobile-nav-heading">
+      <span><small>TIAGO.DEV</small><b>DECK MAP</b></span>
+      <button class="mobile-nav-close" type="button" aria-label="Close deck navigation" data-mobile-nav-close><i aria-hidden="true"></i></button>
+    </div>
+    <a href="#top" data-nav-code="00" data-nav-label="BRIDGE"><b>00</b><span>Bridge</span></a>
+    <a href="#captain" data-nav-code="01" data-nav-label="CAPTAIN"><b>01</b><span>Captain</span></a>
+    <a href="#record" data-nav-code="02" data-nav-label="RECORD"><b>02</b><span>Service Record</span></a>
+    <a href="#logs" data-nav-code="03" data-nav-label="LOGS"><b>03</b><span>Captain's Logs</span></a>
+    <a href="#research" data-nav-code="04" data-nav-label="INTERESTS"><b>04</b><span>Interests</span></a>
+    <a href="#comms" data-nav-code="05" data-nav-label="COMMS"><b>05</b><span>Comms</span></a>
+    <p class="mobile-nav-footer"><i class="status-dot"></i> NAVIGATION SYSTEM ONLINE</p>
+  </nav>
 
   <div class="bridge-grid" id="top">
     <aside class="side-console side-console-left" aria-label="Port-side instruments">
@@ -81,7 +108,7 @@
         <div class="orbit-lines" aria-hidden="true"><i></i><i></i><i></i></div>
         <div class="hero-kicker"><span>INBOUND TRANSMISSION</span><b>∆ 000.01</b></div>
         <p class="hero-overline">WELCOME ABOARD</p>
-        <h1 id="hero-title"><span>{{ $mission.ship }}</span></h1>
+        <h1 id="hero-title"><span class="hero-ship-name"><span class="ship-name-tiago">TIAGO</span><span class="ship-name-dev">.DEV</span></span></h1>
         <p class="hero-tagline">{{ $mission.tagline }}</p>
         <p class="hero-mission">{{ $mission.mission }}</p>
         <div class="hero-actions">
@@ -96,7 +123,7 @@
       </section>
 
       <section class="content-panel captain-panel reveal" id="captain" aria-labelledby="captain-title">
-        <div class="section-number">01</div>
+        <div class="section-number" aria-hidden="true">01</div>
         <div class="section-copy">
           <p class="eyebrow">PERSONNEL / COMMAND</p>
           <h2 id="captain-title">Meet the captain.</h2>
@@ -108,6 +135,7 @@
       </section>
 
       <section class="content-panel record-panel reveal" id="record" aria-labelledby="record-title">
+        <div class="section-number" aria-hidden="true">02</div>
         <div class="section-intro">
           <div>
             <p class="eyebrow">FLIGHT HISTORY</p>
@@ -138,6 +166,7 @@
       </section>
 
       <section class="content-panel logs-panel reveal" id="logs" aria-labelledby="logs-title">
+        <div class="section-number" aria-hidden="true">03</div>
         <div class="section-intro">
           <div>
             <p class="eyebrow">LIVE FROM NOTES.TIAGO.DEV</p>
@@ -152,17 +181,18 @@
       </section>
 
       <section class="content-panel research-panel reveal" id="research" aria-labelledby="research-title">
+        <div class="section-number" aria-hidden="true">04</div>
         <div class="section-intro">
           <div>
             <p class="eyebrow">ACTIVE SCANS</p>
             <h2 id="research-title">Interest vectors</h2>
           </div>
-          <span>04 TARGETS</span>
+          <span>{{ printf "%02d" (len $mission.interests) }} TARGETS</span>
         </div>
         <div class="interest-grid">
           {{ range $mission.interests }}
           <details>
-            <summary><span>{{ .code }}</span><b>{{ .name }}</b><i aria-hidden="true">+</i></summary>
+            <summary>{{ partial "coded-bloch.html" .code }}<b>{{ .name }}</b><i aria-hidden="true">+</i></summary>
             <p>{{ .detail }}</p>
           </details>
           {{ end }}
@@ -170,6 +200,7 @@
       </section>
 
       <section class="content-panel comms-panel reveal" id="comms" aria-labelledby="comms-title">
+        <div class="section-number" aria-hidden="true">05</div>
         <div class="section-intro">
           <div>
             <p class="eyebrow">OPEN CHANNELS</p>
@@ -180,7 +211,7 @@
         <div class="comms-grid">
           {{ range $mission.links }}
           <a href="{{ .url }}" target="_blank" rel="noreferrer">
-            <span class="signal-code">{{ .signal }}</span>
+            {{ partial "coded-bloch.html" .signal }}
             <span><b>{{ .label }}</b><small>{{ .detail }}</small></span>
             <i aria-hidden="true">↗</i>
           </a>
