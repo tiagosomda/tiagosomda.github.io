@@ -27,6 +27,7 @@
       intro.classList.add("is-complete");
       document.body.classList.remove("intro-active");
       intro.hidden = true;
+      document.dispatchEvent(new Event("ship-intro-complete"));
       if (focusShipIdAfterSkip) document.querySelector(".ship-id")?.focus({ preventScroll: true });
     };
 
@@ -262,6 +263,273 @@
     }
   };
 
+  const initStayingSpeedGraphs = () => {
+    const figures = Array.from(document.querySelectorAll("[data-staying-speed-graph]"));
+    if (!figures.length) return;
+
+    const rootStyles = window.getComputedStyle(document.documentElement);
+    const color = (name) => rootStyles.getPropertyValue(name).trim();
+    const palette = {
+      cyan: color("--cyan"),
+      orange: color("--orange-hi"),
+      red: color("--red"),
+      muted: color("--muted"),
+      line: color("--line-bright"),
+      mono: color("--font-mono") || "monospace",
+    };
+    const parseHexColor = (value) => {
+      const match = value.match(/^#([\da-f]{2})([\da-f]{2})([\da-f]{2})$/i);
+      return match ? match.slice(1).map((channel) => Number.parseInt(channel, 16)) : null;
+    };
+    const warningStart = parseHexColor(palette.orange);
+    const warningEnd = parseHexColor(palette.red);
+    const warningColor = (intensity) => {
+      if (!warningStart || !warningEnd) return intensity > 0.5 ? palette.red : palette.orange;
+      const amount = Math.min(1, Math.max(0, intensity));
+      const channels = warningStart.map((channel, index) => Math.round(channel + ((warningEnd[index] - channel) * amount)));
+      return `rgb(${channels.join(", ")})`;
+    };
+
+    figures.forEach((figure) => {
+      const canvas = figure.querySelector("canvas");
+      const context = canvas?.getContext("2d");
+      if (!canvas || !context) return;
+
+      let width = 0;
+      let height = 0;
+      let progress = reducedMotion ? 1 : 0;
+      let animationFrame = 0;
+      let animationStart = 0;
+      let started = false;
+
+      const centerAt = (time) => 0.5 - (Math.sin(time * Math.PI * 1.2) * 0.025);
+      const effortAt = (time) => {
+        const correction = 0.36 * Math.exp(-2.25 * time) * Math.cos(4.5 * Math.PI * time);
+        return Math.min(0.94, Math.max(0.06, centerAt(time) + correction));
+      };
+
+      const draw = () => {
+        if (!width || !height) return;
+
+        const ctx = context;
+        const plot = { left: 10, right: width - 10, top: 9, bottom: height - 9 };
+        const plotWidth = plot.right - plot.left;
+        const plotHeight = plot.bottom - plot.top;
+        const xAt = (time) => plot.left + (time * plotWidth);
+        const yAt = (effort) => plot.top + (effort * plotHeight);
+        const samples = Math.max(48, Math.round(plotWidth / 6));
+
+        ctx.clearRect(0, 0, width, height);
+
+        ctx.save();
+        ctx.strokeStyle = palette.line;
+        ctx.globalAlpha = 0.16;
+        ctx.lineWidth = 1;
+        for (let index = 0; index <= 5; index += 1) {
+          const x = plot.left + ((plotWidth / 5) * index);
+          ctx.beginPath();
+          ctx.moveTo(x, plot.top);
+          ctx.lineTo(x, plot.bottom);
+          ctx.stroke();
+        }
+        for (let index = 0; index <= 4; index += 1) {
+          const y = plot.top + ((plotHeight / 4) * index);
+          ctx.beginPath();
+          ctx.moveTo(plot.left, y);
+          ctx.lineTo(plot.right, y);
+          ctx.stroke();
+        }
+        ctx.restore();
+
+        ctx.save();
+        ctx.fillStyle = palette.cyan;
+        ctx.globalAlpha = 0.075;
+        ctx.beginPath();
+        for (let index = 0; index <= samples; index += 1) {
+          const time = index / samples;
+          const y = yAt(centerAt(time) - 0.105);
+          if (index === 0) ctx.moveTo(xAt(time), y);
+          else ctx.lineTo(xAt(time), y);
+        }
+        for (let index = samples; index >= 0; index -= 1) {
+          const time = index / samples;
+          ctx.lineTo(xAt(time), yAt(centerAt(time) + 0.105));
+        }
+        ctx.closePath();
+        ctx.fill();
+        ctx.restore();
+
+        [-0.105, 0.105].forEach((offset) => {
+          ctx.save();
+          ctx.strokeStyle = palette.cyan;
+          ctx.globalAlpha = 0.34;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          for (let index = 0; index <= samples; index += 1) {
+            const time = index / samples;
+            const x = xAt(time);
+            const y = yAt(centerAt(time) + offset);
+            if (index === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+          }
+          ctx.stroke();
+          ctx.restore();
+        });
+
+        ctx.save();
+        ctx.strokeStyle = palette.orange;
+        ctx.globalAlpha = 0.35;
+        ctx.lineWidth = 1;
+        ctx.setLineDash([3, 5]);
+        ctx.beginPath();
+        for (let index = 0; index <= samples; index += 1) {
+          const time = index / samples;
+          const x = xAt(time);
+          const y = yAt(centerAt(time));
+          if (index === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+        ctx.restore();
+
+        const visibleSamples = Math.max(1, Math.round(samples * progress));
+        const signalGradient = ctx.createLinearGradient(plot.left, 0, plot.right, 0);
+        signalGradient.addColorStop(0, palette.orange);
+        signalGradient.addColorStop(0.72, palette.orange);
+        signalGradient.addColorStop(1, palette.cyan);
+
+        const bandRadius = 0.105;
+        const isStableAt = (time) => Math.abs(effortAt(time) - centerAt(time)) <= bandRadius;
+        const warningIntensityAt = (time) => {
+          const deviation = Math.abs(effortAt(time) - centerAt(time));
+          const localAmplitude = 0.36 * Math.exp(-2.25 * time);
+          if (deviation <= bandRadius) return 0;
+          return (deviation - bandRadius) / Math.max(0.0001, localAmplitude - bandRadius);
+        };
+        ctx.save();
+        ctx.lineWidth = 1.8;
+        ctx.shadowBlur = 7;
+        for (let index = 1; index <= visibleSamples; index += 1) {
+          const startTime = ((index - 1) / visibleSamples) * progress;
+          const endTime = (index / visibleSamples) * progress;
+          const sampleTime = (startTime + endTime) / 2;
+          const stable = isStableAt(sampleTime);
+          const segmentColor = stable ? signalGradient : warningColor(warningIntensityAt(sampleTime));
+          ctx.strokeStyle = segmentColor;
+          ctx.shadowColor = stable ? palette.orange : segmentColor;
+          ctx.beginPath();
+          ctx.moveTo(xAt(startTime), yAt(effortAt(startTime)));
+          ctx.lineTo(xAt(endTime), yAt(effortAt(endTime)));
+          ctx.stroke();
+        }
+        ctx.restore();
+
+        const markerX = xAt(progress);
+        const markerY = yAt(effortAt(progress));
+        const markerStable = isStableAt(progress);
+        const markerColor = markerStable ? (progress > 0.84 ? palette.cyan : palette.orange) : warningColor(warningIntensityAt(progress));
+        ctx.save();
+        ctx.strokeStyle = markerStable ? palette.cyan : markerColor;
+        ctx.fillStyle = markerColor;
+        ctx.lineWidth = 1;
+        ctx.shadowBlur = 11;
+        ctx.shadowColor = markerColor;
+        ctx.beginPath();
+        ctx.arc(markerX, markerY, 4.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+        ctx.restore();
+
+        const labelSize = Math.max(6, Math.min(8, width / 72));
+        ctx.save();
+        ctx.fillStyle = palette.red;
+        ctx.globalAlpha = 0.72;
+        ctx.font = `${labelSize}px ${palette.mono}`;
+        ctx.textAlign = "right";
+        ctx.fillText("OVEREXTENSION", plot.right - 4, plot.top + labelSize + 2);
+        ctx.fillText("UNDERLOAD", plot.right - 4, plot.bottom - 4);
+        ctx.restore();
+
+        ctx.save();
+        ctx.fillStyle = markerColor;
+        ctx.font = `${labelSize + 1}px ${palette.mono}`;
+        ctx.textAlign = markerX > plot.right - 42 ? "right" : "left";
+        const markerLabelX = markerX > plot.right - 42 ? markerX - 8 : markerX + 8;
+        ctx.fillText("Eᵣ", markerLabelX, markerY - 7);
+        ctx.restore();
+
+        if (progress > 0.84) {
+          const arrival = Math.min(1, (progress - 0.84) / 0.16);
+          ctx.save();
+          ctx.fillStyle = palette.cyan;
+          ctx.globalAlpha = arrival;
+          ctx.font = `${labelSize + 2}px ${palette.mono}`;
+          ctx.textAlign = "right";
+          ctx.fillText("vₛ // STABLE", plot.right - 4, yAt(centerAt(0.96)) - 9);
+          ctx.restore();
+        }
+      };
+
+      const resize = () => {
+        const bounds = canvas.getBoundingClientRect();
+        const nextWidth = Math.max(1, Math.round(bounds.width));
+        const nextHeight = Math.max(1, Math.round(bounds.height));
+        const density = Math.min(window.devicePixelRatio || 1, 2);
+        if (nextWidth === width && nextHeight === height) return;
+        width = nextWidth;
+        height = nextHeight;
+        canvas.width = Math.round(width * density);
+        canvas.height = Math.round(height * density);
+        context.setTransform(density, 0, 0, density, 0, 0);
+        draw();
+      };
+
+      const animate = (timestamp) => {
+        if (!animationStart) animationStart = timestamp;
+        progress = Math.min(1, (timestamp - animationStart) / 6200);
+        draw();
+        if (progress < 1) animationFrame = window.requestAnimationFrame(animate);
+      };
+
+      const start = () => {
+        if (started) return;
+        started = true;
+        if (reducedMotion) {
+          progress = 1;
+          draw();
+          return;
+        }
+        animationFrame = window.requestAnimationFrame(animate);
+      };
+
+      const startAfterIntro = () => {
+        if (document.body.classList.contains("intro-active")) {
+          document.addEventListener("ship-intro-complete", start, { once: true });
+        } else {
+          start();
+        }
+      };
+
+      resize();
+      if ("ResizeObserver" in window) {
+        new ResizeObserver(resize).observe(canvas);
+      } else {
+        window.addEventListener("resize", resize, { passive: true });
+      }
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+          if (!entries.some((entry) => entry.isIntersecting)) return;
+          observer.disconnect();
+          startAfterIntro();
+        }, { threshold: 0.25 });
+        observer.observe(figure);
+      } else {
+        startAfterIntro();
+      }
+    });
+  };
+
   const startStarfield = () => {
     const canvas = document.querySelector("#starfield");
     const context = canvas?.getContext("2d");
@@ -337,5 +605,6 @@
   revealPanels();
   setupMobileNavigation();
   loadCaptainLogs();
+  initStayingSpeedGraphs();
   startStarfield();
 })();

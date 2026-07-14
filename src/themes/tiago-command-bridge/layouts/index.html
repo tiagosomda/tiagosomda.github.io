@@ -111,6 +111,11 @@
         <h1 id="hero-title"><span class="hero-ship-name"><span class="ship-name-tiago">TIAGO</span><span class="ship-name-dev">.DEV</span></span></h1>
         <p class="hero-tagline">{{ $mission.tagline }}</p>
         <p class="hero-mission">{{ $mission.mission }}</p>
+        <div class="hero-principle" aria-label="Captain's principles">
+          <p><span>CAPTAIN'S PRINCIPLES</span>SUSTAINABLE FORWARD MOTION</p>
+          {{ partial "staying-speed-formula.html" (dict "class" "hero-principle-formula") }}
+          {{ partial "staying-speed-graph.html" (dict "class" "hero-principle-graph") }}
+        </div>
         <div class="hero-actions">
           <a class="primary-action" href="#captain"><span>Meet the captain</span><b aria-hidden="true">↓</b></a>
           <a class="signal-action" href="#logs"><i class="status-dot"></i> Read latest log</a>
