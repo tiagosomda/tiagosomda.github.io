@@ -117,6 +117,7 @@
     const header = document.querySelector(".bridge-header");
     const bridge = document.querySelector(".hero");
     const links = Array.from(panel?.querySelectorAll("a[href^='#']") || []);
+    const allLinks = Array.from(panel?.querySelectorAll("a") || []);
     if (!navigator || !trigger || !panel || !currentCode || !currentLabel || !progress || !scrim || !closeButton || !links.length) return;
 
     const setOpen = (open) => {
@@ -132,7 +133,7 @@
       setOpen(false);
       trigger.focus();
     });
-    links.forEach((link) => link.addEventListener("click", () => setOpen(false)));
+    allLinks.forEach((link) => link.addEventListener("click", () => setOpen(false)));
 
     document.addEventListener("click", (event) => {
       if (!navigator.contains(event.target) && !panel.contains(event.target)) setOpen(false);

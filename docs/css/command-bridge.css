@@ -2492,6 +2492,36 @@ summary:focus-visible {
     content: "→";
   }
 
+  .mobile-nav-panel a.mobile-nav-external {
+    margin-top: 10px;
+    border-color: rgba(112, 225, 220, 0.38);
+    background:
+      linear-gradient(90deg, rgba(112, 225, 220, 0.08), rgba(168, 117, 255, 0.07)),
+      rgba(112, 225, 220, 0.025);
+  }
+
+  .mobile-nav-panel a.mobile-nav-external b {
+    color: var(--cyan);
+  }
+
+  .mobile-nav-panel a.mobile-nav-external span {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .mobile-nav-panel a.mobile-nav-external small {
+    color: #a875ff;
+    font-family: var(--font-mono);
+    font-size: 6px;
+    letter-spacing: 0.08em;
+  }
+
+  .mobile-nav-panel a.mobile-nav-external::after {
+    color: #a875ff;
+    content: "↗";
+  }
+
   .mobile-nav-footer {
     margin: auto 0 0;
     padding: 22px 10px 0;
