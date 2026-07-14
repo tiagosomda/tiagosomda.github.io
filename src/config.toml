@@ -1,86 +1,17 @@
 publishDir = "../docs"
+baseURL = "https://www.tiago.dev/"
+locale = "en-US"
+title = "TIAGO.DEV"
+theme = "tiago-command-bridge"
+disableKinds = ["section", "taxonomy", "term", "RSS"]
 
-# Site settings
-baseURL = ""
-languageCode = "en-US"
-title = "tiago.dev"
-theme = "hugo-split"
-disableKinds = ["section", "taxonomy", "taxonomyTerm", "RSS", "sitemap"]
-
-# Enter your tracking code to enable Google Analytics
-#.Site.Config.Services.GoogleAnalytics.ID = "//"
-
-# Copyright
-copyright = "tiago.dev"
-
-[params.custom.css]
-  enable = true
+copyright = "Tiago Sommer Damasceno"
 
 [params]
-
-  # Metadata for search engines and social sharing
   author = "Tiago Sommer Damasceno"
-  description = "Tiago's personal website"
-  shareImage = "images/social.jpg"
+  description = "Come aboard TIAGO.DEV — the personal starship of gameplay engineer, explorer, and maker Tiago Sommer Damasceno."
+  shareImage = "images/social-card.png"
   twitterHandle = "tiagosomda"
-
-  # Favicon
   favicon = "favicon.ico"
-
-  # Section - Visual
-  [params.visual]
-
-    # Image
-    [params.visual.image]
-      enable = true
-      file = "images/background.jpg"
-      position = "center center"
-
-    # Video
-    [params.visual.video]
-      enable = false
-      mute = true
-      file = "videos/background.mp4"
-      # youtubeId = "dk9uNWPP7EA"
-
-  # Links
-  #
-  # Links List #1
-  [[params.links]]
-    [params.links.list1]
-      heading = "Connect"
-
-      [[params.links.list1.link]]
-        text = "Blog"
-        url = "https://notes.tiago.dev"
-
-      [[params.links.list1.link]]
-        text = "LinkedIn"
-        url = "https://www.linkedin.com/in/tiagosomda/"
-
-      [[params.links.list1.link]]
-        text = "Bluesky"
-        url = "https://bsky.app/profile/tiago.dev"
-
-
-  # Links List #2
-  [[params.links]]
-    [params.links.list2]
-      heading = "Other Sites"
-
-      [[params.links.list2.link]]
-        text = "Creative Outlet"
-        url = "https://www.strikingthoughts.io/"
-
-      [[params.links.list2.link]]
-        text = "Pretty Games"
-        url = "https://www.pretty.games/"
-
-      [[params.links.list2.link]]
-        text = "Github Gists"
-        url = "https://gist.github.com/tiagosomda" 
-
-  # The original template is released under the Creative Commons Attribution 3.0 License.
-  # Please keep the original attribution link when using for your own project.
-  # If you'd like to use the template without the attribution, you can check out
-  # the license option via the template author's website: https://onepagelove.com/split
+  feedURL = "https://notes.tiago.dev/index.xml"
+  feedHome = "https://notes.tiago.dev"

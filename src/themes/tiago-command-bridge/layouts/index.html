@@ -1,47 +1,17 @@
-<!doctype html>
-<html lang="en-US">
-  <head>
-	<meta name="generator" content="Hugo 0.163.3">
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#070b0e">
-<meta name="color-scheme" content="dark">
-<title>TIAGO.DEV</title>
-<meta name="author" content="Tiago Sommer Damasceno">
-<meta name="description" content="Come aboard TIAGO.DEV — the personal starship of gameplay engineer, explorer, and maker Tiago Sommer Damasceno.">
-<meta name="robots" content="index, follow">
-<meta property="og:title" content="TIAGO.DEV — Engineer. Explorer. Maker.">
-<meta property="og:description" content="Come aboard TIAGO.DEV — the personal starship of gameplay engineer, explorer, and maker Tiago Sommer Damasceno.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.tiago.dev/">
-<meta property="og:image" content="https://www.tiago.dev/images/social-card.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@tiagosomda">
-<link rel="icon" href="/favicon.ico">
-<link rel="preconnect" href="https://notes.tiago.dev">
-
-<link rel="stylesheet" href="/css/command-bridge.css?v=1784052738">
-<script defer src="/js/command-bridge.js?v=1784052738" data-feed="https://notes.tiago.dev/index.xml"></script>
-
-  </head>
-  <body data-theme="command-bridge">
-    <a class="skip-link" href="#main-content">Skip to mission content</a>
-    <canvas class="starfield" id="starfield" aria-hidden="true"></canvas>
-    <div class="space-haze" aria-hidden="true"></div>
-
-
-
-
+{{ define "main" }}
+{{ $mission := hugo.Data.mission }}
+{{ $birthDate := time.AsTime "1989-11-19T00:00:00Z" }}
+{{ $currentSol := div (sub now.Unix $birthDate.Unix) 86400 }}
 <div class="ship-frame">
   <header class="bridge-header" aria-label="Ship status">
     <a class="ship-id" href="#top" aria-label="TIAGO.DEV home">
-      <span class="ship-mark" aria-hidden="true"><img src="/images/cognitive-core.jpg" alt=""></span>
-      <span><b>TIAGO.DEV</b><small>PERSONAL EXPLORATION VESSEL</small></span>
+      <span class="ship-mark" aria-hidden="true"><img src="{{ "images/cognitive-core.jpg" | relURL }}" alt=""></span>
+      <span><b>{{ $mission.ship }}</b><small>PERSONAL EXPLORATION VESSEL</small></span>
     </a>
     <div class="header-telemetry" aria-label="Current ship telemetry">
       <span><i class="status-dot"></i> ONLINE</span>
       <span class="mission-time" data-clock>--:--:-- UTC</span>
-      <span class="current-sol" data-current-sol data-birth-date="1989-11-19" aria-label="Current SOL: 13386">SOL-13386</span>
+      <span class="current-sol" data-current-sol data-birth-date="1989-11-19" aria-label="Current SOL: {{ $currentSol }}">SOL-{{ printf "%04d" $currentSol }}</span>
     </div>
     <div class="mobile-deck-nav" data-mobile-nav>
       <button class="mobile-nav-trigger" type="button" aria-expanded="false" aria-controls="mobile-nav-panel" data-mobile-nav-trigger>
@@ -89,7 +59,7 @@
         <div class="reactor-visual" aria-hidden="true">
           <span class="reactor-ring ring-one"></span>
           <span class="reactor-ring ring-two"></span>
-          <img src="/images/cognitive-core.jpg" alt="">
+          <img src="{{ "images/cognitive-core.jpg" | relURL }}" alt="">
         </div>
         <div class="meter-list" aria-label="Core readings">
           <div><span>Curiosity</span><i style="--level: 94%"></i><b>94</b></div>
@@ -111,9 +81,9 @@
         <div class="orbit-lines" aria-hidden="true"><i></i><i></i><i></i></div>
         <div class="hero-kicker"><span>INBOUND TRANSMISSION</span><b>∆ 000.01</b></div>
         <p class="hero-overline">WELCOME ABOARD</p>
-        <h1 id="hero-title"><span>TIAGO.DEV</span></h1>
-        <p class="hero-tagline">Engineer. Explorer. Maker.</p>
-        <p class="hero-mission">Building playful systems, immersive worlds, and useful experiments from the edge of what is possible.</p>
+        <h1 id="hero-title"><span>{{ $mission.ship }}</span></h1>
+        <p class="hero-tagline">{{ $mission.tagline }}</p>
+        <p class="hero-mission">{{ $mission.mission }}</p>
         <div class="hero-actions">
           <a class="primary-action" href="#captain"><span>Meet the captain</span><b aria-hidden="true">↓</b></a>
           <a class="signal-action" href="#logs"><i class="status-dot"></i> Read latest log</a>
@@ -130,9 +100,9 @@
         <div class="section-copy">
           <p class="eyebrow">PERSONNEL / COMMAND</p>
           <h2 id="captain-title">Meet the captain.</h2>
-          <p class="lead">Tiago Sommer Damasceno is a <strong>Gameplay Engineer</strong> by passion and trade.</p>
-          <p>A passionate programmer with a foundation in software engineering and a habit of turning curious ideas into playable, useful things.</p>
-          <p>Founder of Pretty Games, an independent studio creating delightful experiences with a small, inventive crew.</p>
+          <p class="lead">{{ $mission.captain.name }} is a <strong>{{ $mission.captain.role }}</strong> by passion and trade.</p>
+          <p>{{ $mission.captain.summary }}</p>
+          <p>{{ $mission.captain.current }}</p>
           <div class="captain-signoff"><span>TSD</span><small>COMMANDING OFFICER</small></div>
         </div>
       </section>
@@ -146,7 +116,7 @@
           <span>03 ASSIGNMENTS</span>
         </div>
         <ol class="career-timeline">
-
+          {{ range $index, $item := $mission.career }}
           <li>
             <div class="bloch-sphere" aria-hidden="true">
               <span class="bloch-shell"></span>
@@ -157,47 +127,13 @@
               <em class="bloch-vector"></em>
             </div>
             <div>
-              <a href="https://www.pretty.games/" target="_blank" rel="noreferrer">PRETTY GAMES <span aria-hidden="true">↗</span></a>
-              <time>Oct 2025 — Present</time>
-              <h3>Founder</h3>
-              <p>Independent games, prototypes, and playful experiments.</p>
+              <a href="{{ $item.url }}" target="_blank" rel="noreferrer">{{ $item.callout }} <span aria-hidden="true">↗</span></a>
+              <time>{{ $item.dates }}</time>
+              <h3>{{ $item.role }}</h3>
+              <p>{{ $item.detail }}</p>
             </div>
           </li>
-
-          <li>
-            <div class="bloch-sphere" aria-hidden="true">
-              <span class="bloch-shell"></span>
-              <i class="bloch-ring bloch-ring-a"></i>
-              <i class="bloch-ring bloch-ring-b"></i>
-              <i class="bloch-ring bloch-ring-c"></i>
-              <b class="bloch-axis"></b>
-              <em class="bloch-vector"></em>
-            </div>
-            <div>
-              <a href="https://www.ubisoft.com/en-us/game/assassins-creed/nexus-vr" target="_blank" rel="noreferrer">UBISOFT <span aria-hidden="true">↗</span></a>
-              <time>Oct 2021 — Sep 2025</time>
-              <h3>Senior Gameplay Engineer</h3>
-              <p>Helped bring Assassin&#39;s Creed Nexus VR to life; contributed to R&amp;D and Rainbow Six Siege.</p>
-            </div>
-          </li>
-
-          <li>
-            <div class="bloch-sphere" aria-hidden="true">
-              <span class="bloch-shell"></span>
-              <i class="bloch-ring bloch-ring-a"></i>
-              <i class="bloch-ring bloch-ring-b"></i>
-              <i class="bloch-ring bloch-ring-c"></i>
-              <b class="bloch-axis"></b>
-              <em class="bloch-vector"></em>
-            </div>
-            <div>
-              <a href="https://www.microsoft.com/" target="_blank" rel="noreferrer">MICROSOFT <span aria-hidden="true">↗</span></a>
-              <time>Aug 2013 — Oct 2021</time>
-              <h3>Senior Software Engineer</h3>
-              <p>Contributed to Windows and Azure.</p>
-            </div>
-          </li>
-
+          {{ end }}
         </ol>
       </section>
 
@@ -212,7 +148,7 @@
         <div class="log-feed" data-log-feed aria-live="polite" aria-busy="true">
           <article class="log-placeholder"><span></span><h3>Decrypting recent transmissions…</h3><p>Receiving the latest field notes from the captain.</p></article>
         </div>
-        <a class="panel-link" href="https://notes.tiago.dev" target="_blank" rel="noreferrer">Open complete ship archive <span aria-hidden="true">↗</span></a>
+        <a class="panel-link" href="{{ .Site.Params.feedHome }}" target="_blank" rel="noreferrer">Open complete ship archive <span aria-hidden="true">↗</span></a>
       </section>
 
       <section class="content-panel research-panel reveal" id="research" aria-labelledby="research-title">
@@ -224,27 +160,12 @@
           <span>04 TARGETS</span>
         </div>
         <div class="interest-grid">
-
+          {{ range $mission.interests }}
           <details>
-            <summary><span>XR</span><b>Extended Reality</b><i aria-hidden="true">+</i></summary>
-            <p>New ways to interface with technology, spaces, and one another. The surface has barely been scratched.</p>
+            <summary><span>{{ .code }}</span><b>{{ .name }}</b><i aria-hidden="true">+</i></summary>
+            <p>{{ .detail }}</p>
           </details>
-
-          <details>
-            <summary><span>ML</span><b>Machine Learning</b><i aria-hidden="true">+</i></summary>
-            <p>Adaptive game loops, genetic agents, and environments that respond in surprising ways.</p>
-          </details>
-
-          <details>
-            <summary><span>GEN</span><b>Generative AI</b><i aria-hidden="true">+</i></summary>
-            <p>Tools that augment creators and unlock more diverse, expressive player experiences.</p>
-          </details>
-
-          <details>
-            <summary><span>P2P</span><b>Decentralization</b><i aria-hidden="true">+</i></summary>
-            <p>Empowering people through open social protocols, portable identity, and user-owned data.</p>
-          </details>
-
+          {{ end }}
         </div>
       </section>
 
@@ -257,48 +178,18 @@
           <span>SIGNAL CLEAR</span>
         </div>
         <div class="comms-grid">
-
-          <a href="https://notes.tiago.dev" target="_blank" rel="noreferrer">
-            <span class="signal-code">LOG</span>
-            <span><b>Captain&#39;s Logs</b><small>Notes and field reports</small></span>
+          {{ range $mission.links }}
+          <a href="{{ .url }}" target="_blank" rel="noreferrer">
+            <span class="signal-code">{{ .signal }}</span>
+            <span><b>{{ .label }}</b><small>{{ .detail }}</small></span>
             <i aria-hidden="true">↗</i>
           </a>
-
-          <a href="https://www.linkedin.com/in/tiagosomda/" target="_blank" rel="noreferrer">
-            <span class="signal-code">IN</span>
-            <span><b>LinkedIn</b><small>Professional coordinates</small></span>
-            <i aria-hidden="true">↗</i>
-          </a>
-
-          <a href="https://bsky.app/profile/tiago.dev" target="_blank" rel="noreferrer">
-            <span class="signal-code">BS</span>
-            <span><b>Bluesky</b><small>Open comms channel</small></span>
-            <i aria-hidden="true">↗</i>
-          </a>
-
-          <a href="https://www.pretty.games/" target="_blank" rel="noreferrer">
-            <span class="signal-code">PG</span>
-            <span><b>Pretty Games</b><small>Independent game studio</small></span>
-            <i aria-hidden="true">↗</i>
-          </a>
-
-          <a href="https://www.strikingthoughts.io/" target="_blank" rel="noreferrer">
-            <span class="signal-code">ST</span>
-            <span><b>Striking Thoughts</b><small>Creative transmissions</small></span>
-            <i aria-hidden="true">↗</i>
-          </a>
-
-          <a href="https://gist.github.com/tiagosomda" target="_blank" rel="noreferrer">
-            <span class="signal-code">GH</span>
-            <span><b>GitHub Gists</b><small>Code fragments and artifacts</small></span>
-            <i aria-hidden="true">↗</i>
-          </a>
-
+          {{ end }}
         </div>
       </section>
 
       <footer class="channel-footer">
-        <span>© 2026 TIAGO.DEV</span>
+        <span>© {{ now.Year }} {{ $mission.ship }}</span>
         <span>END TRANSMISSION // KEEP EXPLORING</span>
       </footer>
     </main>
@@ -345,6 +236,4 @@
     </aside>
   </div>
 </div>
-
-  </body>
-</html>
+{{ end }}

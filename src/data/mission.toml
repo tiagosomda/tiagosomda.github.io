@@ -1,0 +1,86 @@
+ship = "TIAGO.DEV"
+tagline = "Engineer. Explorer. Maker."
+mission = "Building playful systems, immersive worlds, and useful experiments from the edge of what is possible."
+
+[captain]
+name = "Tiago Sommer Damasceno"
+role = "Gameplay Engineer"
+summary = "A passionate programmer with a foundation in software engineering and a habit of turning curious ideas into playable, useful things."
+current = "Founder of Pretty Games, an independent studio creating delightful experiences with a small, inventive crew."
+
+[[career]]
+callout = "PRETTY GAMES"
+role = "Founder"
+dates = "Oct 2025 — Present"
+detail = "Independent games, prototypes, and playful experiments."
+url = "https://www.pretty.games/"
+
+[[career]]
+callout = "UBISOFT"
+role = "Senior Gameplay Engineer"
+dates = "Oct 2021 — Sep 2025"
+detail = "Helped bring Assassin's Creed Nexus VR to life; contributed to R&D and Rainbow Six Siege."
+url = "https://www.ubisoft.com/en-us/game/assassins-creed/nexus-vr"
+
+[[career]]
+callout = "MICROSOFT"
+role = "Senior Software Engineer"
+dates = "Aug 2013 — Oct 2021"
+detail = "Contributed to Windows and Azure."
+url = "https://www.microsoft.com/"
+
+[[interests]]
+code = "XR"
+name = "Extended Reality"
+detail = "New ways to interface with technology, spaces, and one another. The surface has barely been scratched."
+
+[[interests]]
+code = "ML"
+name = "Machine Learning"
+detail = "Adaptive game loops, genetic agents, and environments that respond in surprising ways."
+
+[[interests]]
+code = "GEN"
+name = "Generative AI"
+detail = "Tools that augment creators and unlock more diverse, expressive player experiences."
+
+[[interests]]
+code = "P2P"
+name = "Decentralization"
+detail = "Empowering people through open social protocols, portable identity, and user-owned data."
+
+[[links]]
+label = "Captain's Logs"
+detail = "Notes and field reports"
+url = "https://notes.tiago.dev"
+signal = "LOG"
+
+[[links]]
+label = "LinkedIn"
+detail = "Professional coordinates"
+url = "https://www.linkedin.com/in/tiagosomda/"
+signal = "IN"
+
+[[links]]
+label = "Bluesky"
+detail = "Open comms channel"
+url = "https://bsky.app/profile/tiago.dev"
+signal = "BS"
+
+[[links]]
+label = "Pretty Games"
+detail = "Independent game studio"
+url = "https://www.pretty.games/"
+signal = "PG"
+
+[[links]]
+label = "Striking Thoughts"
+detail = "Creative transmissions"
+url = "https://www.strikingthoughts.io/"
+signal = "ST"
+
+[[links]]
+label = "GitHub Gists"
+detail = "Code fragments and artifacts"
+url = "https://gist.github.com/tiagosomda"
+signal = "GH"

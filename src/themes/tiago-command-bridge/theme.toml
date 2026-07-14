@@ -1,0 +1,9 @@
+name = "TIAGO.DEV Command Bridge"
+license = "MIT"
+description = "A cinematic deep-space command bridge for tiago.dev."
+homepage = "https://www.tiago.dev/"
+min_version = "0.120.0"
+
+[author]
+  name = "Tiago Sommer Damasceno"
+  homepage = "https://www.tiago.dev/"

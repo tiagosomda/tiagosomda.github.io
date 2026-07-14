@@ -1,30 +1,18 @@
 #!/bin/sh
 
-# make script an executable
-# chmod +x deploy.sh
+set -eu
 
-# If a command fails then the deploy stops
-set -e
+repo_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+source_dir="$repo_root/src"
+docs_dir="$repo_root/docs"
 
-printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
+rm -rf "$docs_dir"
 
-# delete existing generated files
-rm -rf docs/
+hugo --source "$source_dir" \
+  --theme tiago-command-bridge \
+  --destination "$docs_dir" \
+  --baseURL "https://www.tiago.dev/"
 
-# build site
-hugo -t hugo-split-theme
+find "$docs_dir" -name '*.html' -type f -exec perl -pi -e 's/[ \t]+$//' {} +
 
-# go to deployment folder
-cd docs
-
-# add changes
-git add .
-
-# Commit changes.
-msg="rebuilding site : [$(date)]"
-if [ -n "$*" ]; then
-	msg="$*"
-fi
-git commit -m "$msg"
-
-git push origin main
+printf "Built Command Bridge at /.\n"
