@@ -2683,10 +2683,9 @@ summary:focus-visible {
     background-size: 40px 40px;
   }
 
-  .viewport-brackets i:nth-child(1),
-  .viewport-brackets i:nth-child(4) { left: 12px; }
-  .viewport-brackets i:nth-child(2),
-  .viewport-brackets i:nth-child(3) { right: 12px; }
+  .viewport-brackets {
+    display: none;
+  }
 
   .hero-kicker {
     top: 23px;
@@ -2743,6 +2742,7 @@ summary:focus-visible {
     align-items: flex-start;
     gap: 17px;
     margin-top: 24px;
+    margin-bottom: 32px;
     flex-direction: column;
   }
 
